@@ -51,7 +51,7 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up delay-300">
               <Button size="lg" asChild className="rounded-full px-8 shadow-lg hover:shadow-primary/25 transition-all duration-300 animate-glow-pulse-subtle">
-                <Link href="/app" className="gap-2">
+                <Link href="/contact" className="gap-2">
                   Commencer gratuitement
                   <ArrowRight className="w-4 h-4" />
                 </Link>

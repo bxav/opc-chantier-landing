@@ -70,7 +70,7 @@ export function CTA() {
             animate-glow-pulse
           "
         >
-          <Link href="/app" className="gap-2 text-lg font-semibold">
+          <Link href="/contact" className="gap-2 text-lg font-semibold">
             Lancer l&apos;application
             <ArrowRight className="w-5 h-5" />
           </Link>
