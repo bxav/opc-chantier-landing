@@ -1,0 +1,55 @@
+"use client"
+
+import { useState } from "react"
+import { ArticleCard } from "./article-card"
+import { articles, ArticleCategory, categoryLabels } from "@/content/articles"
+
+const categories: (ArticleCategory | "all")[] = ["all", "guide", "conseil", "actualite"]
+
+export function ArticleList() {
+  const [activeCategory, setActiveCategory] = useState<ArticleCategory | "all">("all")
+
+  const filteredArticles = activeCategory === "all"
+    ? articles
+    : articles.filter((article) => article.category === activeCategory)
+
+  return (
+    <div className="space-y-8">
+      {/* Category tabs */}
+      <div className="flex flex-wrap gap-2">
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+              activeCategory === category
+                ? "bg-primary text-primary-foreground shadow-lg"
+                : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
+            }`}
+          >
+            {category === "all" ? "Tous" : categoryLabels[category]}
+          </button>
+        ))}
+      </div>
+
+      {/* Articles grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredArticles.map((article, i) => (
+          <div
+            key={article.slug}
+            className="opacity-0 animate-fade-up"
+            style={{ animationDelay: `${i * 100}ms`, animationFillMode: "forwards" }}
+          >
+            <ArticleCard article={article} />
+          </div>
+        ))}
+      </div>
+
+      {filteredArticles.length === 0 && (
+        <div className="text-center py-12 text-muted-foreground">
+          Aucun article dans cette categorie pour le moment.
+        </div>
+      )}
+    </div>
+  )
+}
