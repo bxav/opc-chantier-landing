@@ -3,43 +3,48 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Send, CheckCircle } from "lucide-react"
+import { Send } from "lucide-react"
+
+const CONTACT_EMAIL = "contact@optichantier.fr"
 
 const roles = [
   { value: "", label: "Selectionnez votre role" },
-  { value: "opc", label: "OPC" },
-  { value: "conducteur", label: "Conducteur de travaux" },
-  { value: "chef", label: "Chef de chantier" },
-  { value: "autre", label: "Autre" },
+  { value: "OPC", label: "OPC" },
+  { value: "Conducteur de travaux", label: "Conducteur de travaux" },
+  { value: "Chef de chantier", label: "Chef de chantier" },
+  { value: "Autre", label: "Autre" },
 ]
 
 export function ContactForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    role: "",
+    message: "",
+  })
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsLoading(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsLoading(false)
-    setIsSubmitted(true)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  if (isSubmitted) {
-    return (
-      <Card className="bg-card/50">
-        <CardContent className="p-8 text-center">
-          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="w-8 h-8 text-green-600" />
-          </div>
-          <h3 className="text-xl font-semibold mb-2">Message envoye !</h3>
-          <p className="text-muted-foreground">
-            Nous vous repondrons dans les 24 heures.
-          </p>
-        </CardContent>
-      </Card>
-    )
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    const { firstName, lastName, email, company, role, message } = formData
+    const name = [firstName, lastName].filter(Boolean).join(" ")
+
+    const subject = `Contact OptiChantier${role ? ` - ${role}` : ""}`
+    const bodyLines = []
+    if (name) bodyLines.push(`Nom: ${name}`)
+    if (email) bodyLines.push(`Email: ${email}`)
+    if (company) bodyLines.push(`Entreprise: ${company}`)
+    if (role) bodyLines.push(`Role: ${role}`)
+    bodyLines.push("", message)
+    const body = bodyLines.join("\n")
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
   return (
@@ -55,6 +60,8 @@ export function ContactForm() {
                 type="text"
                 id="firstName"
                 name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
                 className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 placeholder="Jean"
               />
@@ -67,6 +74,8 @@ export function ContactForm() {
                 type="text"
                 id="lastName"
                 name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
                 className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                 placeholder="Dupont"
               />
@@ -82,6 +91,8 @@ export function ContactForm() {
               id="email"
               name="email"
               required
+              value={formData.email}
+              onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               placeholder="jean.dupont@entreprise.fr"
             />
@@ -95,6 +106,8 @@ export function ContactForm() {
               type="text"
               id="company"
               name="company"
+              value={formData.company}
+              onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
               placeholder="Nom de votre entreprise"
             />
@@ -107,6 +120,8 @@ export function ContactForm() {
             <select
               id="role"
               name="role"
+              value={formData.role}
+              onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             >
               {roles.map((role) => (
@@ -126,6 +141,8 @@ export function ContactForm() {
               name="message"
               required
               rows={5}
+              value={formData.message}
+              onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
               placeholder="Comment pouvons-nous vous aider ?"
             />
@@ -135,16 +152,9 @@ export function ContactForm() {
             type="submit"
             size="lg"
             className="w-full rounded-xl"
-            disabled={isLoading}
           >
-            {isLoading ? (
-              "Envoi en cours..."
-            ) : (
-              <>
-                Envoyer le message
-                <Send className="w-4 h-4 ml-2" />
-              </>
-            )}
+            Envoyer le message
+            <Send className="w-4 h-4 ml-2" />
           </Button>
         </form>
       </CardContent>
