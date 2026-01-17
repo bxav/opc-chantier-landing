@@ -72,7 +72,7 @@ export function Navbar() {
             </Link>
             <div className="w-px h-6 bg-border mx-2" />
             <Button asChild className="rounded-full px-6 shadow-lg hover:shadow-primary/25 transition-all duration-300">
-              <Link href="/app">Lancer l&apos;app</Link>
+              <Link href="/contact">Lancer l&apos;app</Link>
             </Button>
           </div>
 
@@ -122,7 +122,7 @@ export function Navbar() {
             Contact
           </Link>
           <Button asChild className="w-full rounded-xl mt-2">
-            <Link href="/app">Lancer l&apos;app</Link>
+            <Link href="/contact">Lancer l&apos;app</Link>
           </Button>
         </div>
       </div>
