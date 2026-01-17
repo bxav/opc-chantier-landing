@@ -27,6 +27,7 @@ const personas = [
       "Vue multi-projets avec tableau de bord centralise",
     ],
     color: "oklch(0.62 0.24 30)",
+    scrollToId: "opc",
   },
   {
     icon: <HardHat className="w-7 h-7" />,
@@ -45,6 +46,7 @@ const personas = [
       "Export PDF pour partage avec les parties prenantes",
     ],
     color: "oklch(0.55 0.20 250)",
+    scrollToId: "conducteur-de-travaux",
   },
   {
     icon: <Users className="w-7 h-7" />,
@@ -63,6 +65,7 @@ const personas = [
       "Assistant IA pour questions techniques",
     ],
     color: "oklch(0.60 0.18 150)",
+    scrollToId: "chef-de-chantier",
   },
 ]
 

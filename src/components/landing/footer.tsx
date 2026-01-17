@@ -5,7 +5,7 @@ const links = {
   product: [
     { label: "Fonctionnalites", href: "/#fonctionnalites" },
     { label: "Cas d'utilisation", href: "/cas-utilisation" },
-    { label: "Lancer l'app", href: "/app" },
+    { label: "Lancer l'app", href: "/contact" },
   ],
   resources: [
     { label: "Ressources", href: "/ressources" },

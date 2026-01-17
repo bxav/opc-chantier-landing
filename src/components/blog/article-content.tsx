@@ -6,6 +6,18 @@ interface ArticleContentProps {
   article: Article
 }
 
+function parseInlineMarkdown(text: string) {
+  return text.split("**").map((part, j) =>
+    j % 2 === 1 ? (
+      <strong key={j} className="text-foreground font-semibold">
+        {part}
+      </strong>
+    ) : (
+      part
+    )
+  )
+}
+
 export function ArticleContent({ article }: ArticleContentProps) {
   const formattedDate = new Date(article.date).toLocaleDateString("fr-FR", {
     day: "numeric",
@@ -71,7 +83,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
           if (trimmed.startsWith("- ")) {
             return (
               <li key={i} className="text-muted-foreground ml-4">
-                {trimmed.replace("- ", "")}
+                {parseInlineMarkdown(trimmed.replace("- ", ""))}
               </li>
             )
           }
@@ -79,7 +91,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
           if (/^\d+\.\s/.test(trimmed)) {
             return (
               <li key={i} className="text-muted-foreground ml-4 list-decimal">
-                {trimmed.replace(/^\d+\.\s/, "")}
+                {parseInlineMarkdown(trimmed.replace(/^\d+\.\s/, ""))}
               </li>
             )
           }
@@ -90,15 +102,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
 
           return (
             <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-              {trimmed.split("**").map((part, j) =>
-                j % 2 === 1 ? (
-                  <strong key={j} className="text-foreground font-semibold">
-                    {part}
-                  </strong>
-                ) : (
-                  part
-                )
-              )}
+              {parseInlineMarkdown(trimmed)}
             </p>
           )
         })}

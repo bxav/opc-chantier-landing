@@ -13,6 +13,7 @@ interface PersonaCardProps {
   painPoints: string[]
   features: string[]
   color: string
+  scrollToId?: string
 }
 
 export function PersonaCard({
@@ -22,11 +23,21 @@ export function PersonaCard({
   painPoints,
   features,
   color,
+  scrollToId,
 }: PersonaCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
 
+  const handleCardClick = () => {
+    if (scrollToId) {
+      document.getElementById(scrollToId)?.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
-    <Card className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+    <Card
+      className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+      onClick={handleCardClick}
+    >
       <div
         className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity"
         style={{ backgroundColor: color }}
@@ -80,7 +91,10 @@ export function PersonaCard({
           variant="ghost"
           size="sm"
           className="w-full"
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={(e) => {
+            e.stopPropagation()
+            setIsExpanded(!isExpanded)
+          }}
         >
           {isExpanded ? (
             <>
