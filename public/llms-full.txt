@@ -1,0 +1,100 @@
+# OptiChantier - Documentation Complete
+
+> Application iOS de pilotage de chantier pour les professionnels du BTP. Notes vocales, photos annotees, comptes-rendus IA et mode hors ligne.
+
+OptiChantier est une application gratuite pour iPhone destinee aux OPC, conducteurs de travaux et chefs de chantier. Elle permet de capturer des notes vocales, annoter des photos, generer des comptes-rendus automatiques par IA, et fonctionne entierement hors ligne.
+
+## Fonctionnalites principales
+
+### Enregistrement audio et transcription IA
+Capturez vos observations vocalement pendant vos visites de chantier. L'IA transcrit automatiquement vos enregistrements et les structure en notes exploitables.
+
+### Photos annotees sur chantier
+Prenez des photos et ajoutez des annotations directement sur l'image : fleches, zones encercles, textes. Documentez visuellement les situations rencontrees.
+
+### Assistant IA avec contexte projet
+Un assistant IA qui connait le contexte de votre projet et vous aide a rediger, analyser et organiser vos informations chantier.
+
+### Mode hors ligne complet
+Travaillez sans connexion internet. Toutes les fonctionnalites sont disponibles hors ligne. La synchronisation se fait automatiquement des que vous retrouvez une connexion.
+
+### Gestion multi-projets
+Organisez vos chantiers par projet. Retrouvez facilement l'historique des notes, photos et comptes-rendus pour chaque operation.
+
+---
+
+## Cas d'utilisation
+
+### Pour les OPC (Ordonnancement, Pilotage, Coordination)
+- Enregistrement des reunions de coordination
+- Suivi des avancements par corps d'etat
+- Generation automatique des comptes-rendus OPC
+- Documentation photographique des points de vigilance
+
+### Pour les Conducteurs de travaux
+- Capture rapide des observations terrain
+- Suivi des non-conformites avec photos annotees
+- Communication efficace avec les equipes
+- Archivage structure de la documentation chantier
+
+### Pour les Chefs de chantier
+- Notes vocales pendant les tours de chantier
+- Photos annotees pour les rapports journaliers
+- Consultation hors ligne des informations projet
+- Partage rapide avec la hierarchie
+
+---
+
+## Ressources et guides
+
+### Guide OPC batiment : role et missions
+Le role de l'OPC dans un projet de construction : coordination des intervenants, planification des travaux, animation des reunions, suivi de l'avancement.
+URL: https://www.optichantier.com/ressources/opc-batiment-role-missions
+
+### Rediger un compte rendu de chantier
+Les bonnes pratiques pour rediger des comptes-rendus de chantier clairs et exploitables : structure, informations essentielles, diffusion.
+URL: https://www.optichantier.com/ressources/rediger-compte-rendu-chantier
+
+### Optimiser les reunions de chantier
+Comment rendre vos reunions de chantier plus efficaces : preparation, animation, outils de prise de notes, suivi des actions.
+URL: https://www.optichantier.com/ressources/optimiser-reunions-chantier
+
+### Photos annotees pour la communication chantier
+L'interet des photos annotees pour documenter et communiquer sur les situations terrain : localisation precise, mesures, contexte visuel.
+URL: https://www.optichantier.com/ressources/photos-annotees-communication-chantier
+
+### L'IA dans la construction
+Les applications de l'intelligence artificielle dans le BTP : transcription, generation de documents, assistance technique, analyse predictive.
+URL: https://www.optichantier.com/ressources/ia-construction-tendances-2026
+
+---
+
+## Pages du site
+
+- [Accueil](https://www.optichantier.com/): Presentation de l'application et de ses fonctionnalites
+- [Cas d'utilisation](https://www.optichantier.com/cas-utilisation): Scenarios d'usage par metier (OPC, Conducteur, Chef de chantier)
+- [Ressources](https://www.optichantier.com/ressources): Blog avec guides et conseils pour les professionnels du BTP
+- [Contact](https://www.optichantier.com/contact): Formulaire de contact et FAQ
+
+---
+
+## FAQ
+
+### OptiChantier est-il gratuit ?
+Oui, OptiChantier est entierement gratuit. Aucun abonnement, aucun frais cache.
+
+### L'application fonctionne-t-elle hors ligne ?
+Oui, toutes les fonctionnalites sont disponibles hors connexion. La synchronisation est automatique.
+
+### Sur quels appareils fonctionne OptiChantier ?
+OptiChantier est disponible sur iPhone. Une version Android est prevue.
+
+### Mes donnees sont-elles securisees ?
+Oui, vos donnees sont chiffrees et stockees de maniere securisee. Vous restez proprietaire de vos donnees.
+
+---
+
+## Contact
+
+Site web: https://www.optichantier.com
+Contact: https://www.optichantier.com/contact

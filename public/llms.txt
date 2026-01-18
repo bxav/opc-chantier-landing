@@ -1,0 +1,25 @@
+# OptiChantier
+
+> Application iOS de pilotage de chantier pour les professionnels du BTP. Notes vocales, photos annotees, comptes-rendus IA et mode hors ligne.
+
+OptiChantier est une application gratuite pour iPhone destinee aux OPC, conducteurs de travaux et chefs de chantier. Elle permet de capturer des notes vocales, annoter des photos, generer des comptes-rendus automatiques par IA, et fonctionne entierement hors ligne.
+
+## Fonctionnalites principales
+
+- Enregistrement audio et transcription IA
+- Photos annotees sur chantier
+- Assistant IA avec contexte projet
+- Mode hors ligne complet
+- Gestion multi-projets
+
+## Pages
+
+- [Accueil](https://www.optichantier.com/): Presentation de l'application
+- [Cas d'utilisation](https://www.optichantier.com/cas-utilisation): OPC, Conducteur de travaux, Chef de chantier
+- [Ressources](https://www.optichantier.com/ressources): Guides et articles BTP
+- [Contact](https://www.optichantier.com/contact): Formulaire et FAQ
+
+## Optional
+
+- [Guide OPC](https://www.optichantier.com/ressources/opc-batiment-role-missions)
+- [Compte rendu chantier](https://www.optichantier.com/ressources/rediger-compte-rendu-chantier)
