@@ -107,11 +107,14 @@ export function Footer() {
             &copy; 2026 OptiChantier. Tous droits reserves.
           </p>
           <div className="flex items-center gap-6 text-sm text-white/50">
-            <Link href="/contact" className="hover:text-primary transition-colors">
+            <Link href="/mentions-legales" className="hover:text-primary transition-colors">
               Mentions legales
             </Link>
-            <Link href="/contact" className="hover:text-primary transition-colors">
+            <Link href="/cgu" className="hover:text-primary transition-colors">
               CGU
+            </Link>
+            <Link href="/politique-confidentialite" className="hover:text-primary transition-colors">
+              Confidentialite
             </Link>
           </div>
         </div>
