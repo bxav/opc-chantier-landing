@@ -9,7 +9,7 @@
 
 ## Quick Links
 
-- **Landing Page**: https://optichantier.com
+- **Landing Page**: https://www.optichantier.com
 - **Contact**: contact@optichantier.com
 
 ## Tech Stack

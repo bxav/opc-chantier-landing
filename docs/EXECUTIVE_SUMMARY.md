@@ -74,7 +74,7 @@ OptiChantier is a native iOS application designed to revolutionize construction 
 ## Landing Page Structure
 
 ```
-optichantier.com/
+www.optichantier.com/
 ├── /                    # Homepage - Hero, Features, Benefits, Testimonials, CTA
 ├── /cas-utilisation     # Use cases by persona (OPC, Conducteur, Chef)
 ├── /ressources          # Blog with guides, tips, news
@@ -117,7 +117,7 @@ OptiChantier is developed by a team passionate about bringing modern tools to tr
 
 ## Contact
 
-- **Website**: https://optichantier.com
+- **Website**: https://www.optichantier.com
 - **Email**: contact@optichantier.com
 
 ---

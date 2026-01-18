@@ -34,8 +34,8 @@ export default function ContactPage() {
       <FAQSchema items={faqs} />
       <BreadcrumbSchema
         items={[
-          { name: "Accueil", url: "https://optichantier.com" },
-          { name: "Contact", url: "https://optichantier.com/contact" },
+          { name: "Accueil", url: "https://www.optichantier.com" },
+          { name: "Contact", url: "https://www.optichantier.com/contact" },
         ]}
       />
       <main className="min-h-screen">
