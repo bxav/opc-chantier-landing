@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Send } from "lucide-react"
 
-const CONTACT_EMAIL = "contact@optichantier.fr"
+const CONTACT_EMAIL = "contact@optichantier.com"
 
 const roles = [
   { value: "", label: "Selectionnez votre role" },

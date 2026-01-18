@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://optichantier.fr/sitemap.xml",
+    sitemap: "https://optichantier.com/sitemap.xml",
   }
 }

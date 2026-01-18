@@ -2,7 +2,7 @@ import { MetadataRoute } from "next"
 import { articles } from "@/content/articles"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://optichantier.fr"
+  const baseUrl = "https://optichantier.com"
 
   const staticPages = [
     {

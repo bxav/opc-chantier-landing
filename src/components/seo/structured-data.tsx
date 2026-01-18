@@ -3,8 +3,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "OptiChantier",
-    url: "https://optichantier.fr",
-    logo: "https://optichantier.fr/icon.svg",
+    url: "https://optichantier.com",
+    logo: "https://optichantier.com/icon.svg",
     description:
       "OptiChantier est une application iOS de gestion de chantier pour les professionnels du BTP.",
     foundingDate: "2024",
@@ -12,7 +12,7 @@ export function OrganizationSchema() {
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "contact@optichantier.fr",
+      email: "contact@optichantier.com",
       availableLanguage: ["French"],
     },
   }
@@ -48,7 +48,7 @@ export function SoftwareApplicationSchema() {
       "Mode hors ligne",
       "Gestion multi-projets",
     ],
-    screenshot: "https://optichantier.fr/opengraph-image",
+    screenshot: "https://optichantier.com/opengraph-image",
     softwareVersion: "1.0",
     author: {
       "@type": "Organization",
@@ -140,14 +140,14 @@ export function ArticleSchema({
     author: {
       "@type": "Organization",
       name: "OptiChantier",
-      url: "https://optichantier.fr",
+      url: "https://optichantier.com",
     },
     publisher: {
       "@type": "Organization",
       name: "OptiChantier",
       logo: {
         "@type": "ImageObject",
-        url: "https://optichantier.fr/icon.svg",
+        url: "https://optichantier.com/icon.svg",
       },
     },
     mainEntityOfPage: {

@@ -45,7 +45,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   const relatedArticles = getRelatedArticles(slug)
 
-  const articleUrl = `https://optichantier.fr/ressources/${article.slug}`
+  const articleUrl = `https://optichantier.com/ressources/${article.slug}`
 
   return (
     <>
@@ -57,8 +57,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       />
       <BreadcrumbSchema
         items={[
-          { name: "Accueil", url: "https://optichantier.fr" },
-          { name: "Ressources", url: "https://optichantier.fr/ressources" },
+          { name: "Accueil", url: "https://optichantier.com" },
+          { name: "Ressources", url: "https://optichantier.com/ressources" },
           { name: article.title, url: articleUrl },
         ]}
       />

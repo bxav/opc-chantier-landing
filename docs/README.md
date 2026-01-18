@@ -9,8 +9,8 @@
 
 ## Quick Links
 
-- **Landing Page**: https://optichantier.fr
-- **Contact**: contact@optichantier.fr
+- **Landing Page**: https://optichantier.com
+- **Contact**: contact@optichantier.com
 
 ## Tech Stack
 

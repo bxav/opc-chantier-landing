@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   authors: [{ name: "OptiChantier" }],
   creator: "OptiChantier",
   publisher: "OptiChantier",
-  metadataBase: new URL("https://optichantier.fr"),
+  metadataBase: new URL("https://optichantier.com"),
   alternates: {
     canonical: "/",
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "OptiChantier - L'app iOS de pilotage de chantier",
     description:
       "Pilotez vos chantiers BTP avec simplicité. Notes vocales, photos annotées, comptes-rendus IA et mode hors ligne.",
-    url: "https://optichantier.fr",
+    url: "https://optichantier.com",
     siteName: "OptiChantier",
     locale: "fr_FR",
     type: "website",
