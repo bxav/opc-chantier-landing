@@ -1,5 +1,6 @@
 "use client"
 
+import { useParams } from "next/navigation"
 import { useLocale, useTranslations } from "next-intl"
 import { usePathname, useRouter } from "@/i18n/routing"
 import { Button } from "@/components/ui/button"
@@ -9,14 +10,15 @@ export function LocaleSwitcher() {
   const locale = useLocale() as Locale
   const router = useRouter()
   const pathname = usePathname()
+  const params = useParams()
   const t = useTranslations("localeSwitcher")
 
   const otherLocale = locales.find((l) => l !== locale) as Locale
 
   const handleSwitch = () => {
-    // Type assertion needed as pathname can include dynamic routes
+    // Pass params for dynamic routes (e.g., slug for /resources/[slug])
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    router.replace(pathname as any, { locale: otherLocale })
+    router.replace({ pathname: pathname as any, params: params as any }, { locale: otherLocale })
   }
 
   return (
