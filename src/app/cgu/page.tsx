@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo"
 
 export const metadata: Metadata = {
   title: "Conditions Generales d'Utilisation",
-  description: "CGU de l'application OptiChantier. Conditions d'acces, utilisation du service et responsabilites.",
+  description: "CGU de l'application BrickNote. Conditions d'acces, utilisation du service et responsabilites.",
 }
 
 export default function CGUPage() {
@@ -13,8 +13,8 @@ export default function CGUPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Accueil", url: "https://www.optichantier.com" },
-          { name: "CGU", url: "https://www.optichantier.com/cgu" },
+          { name: "Accueil", url: "https://www.bricknote.ai" },
+          { name: "CGU", url: "https://www.bricknote.ai/cgu" },
         ]}
       />
       <main className="min-h-screen">
@@ -25,7 +25,7 @@ export default function CGUPage() {
 
         <PageHeader
           title="Conditions Generales d'Utilisation"
-          subtitle="Conditions regissant l'utilisation de l'application OptiChantier"
+          subtitle="Conditions regissant l'utilisation de l'application BrickNote"
           badge="Legal"
         />
 
@@ -36,7 +36,7 @@ export default function CGUPage() {
                 <h2 className="text-2xl font-serif font-semibold mb-4">Article 1 - Objet</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Les presentes Conditions Generales d&apos;Utilisation (CGU) regissent l&apos;acces et l&apos;utilisation
-                  de l&apos;application mobile OptiChantier, editee par APITHINGS (SIREN 890 251 184).
+                  de l&apos;application mobile BrickNote, editee par APITHINGS (SIREN 890 251 184).
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   L&apos;utilisation de l&apos;application implique l&apos;acceptation pleine et entiere des presentes CGU.
@@ -46,7 +46,7 @@ export default function CGUPage() {
               <div>
                 <h2 className="text-2xl font-serif font-semibold mb-4">Article 2 - Description du service</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  OptiChantier est une application mobile iOS destinee aux professionnels du BTP
+                  BrickNote est une application mobile iOS destinee aux professionnels du BTP
                   (OPC, conducteurs de travaux, chefs de chantier). Elle permet :
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
@@ -130,7 +130,7 @@ export default function CGUPage() {
               <div>
                 <h2 className="text-2xl font-serif font-semibold mb-4">Article 8 - Propriete intellectuelle</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  L&apos;application OptiChantier, son interface, son code source et tous les elements
+                  L&apos;application BrickNote, son interface, son code source et tous les elements
                   qui la composent sont la propriete exclusive de APITHINGS.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">

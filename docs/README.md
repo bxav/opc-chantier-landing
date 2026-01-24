@@ -1,4 +1,4 @@
-# OptiChantier Documentation
+# BrickNote Documentation
 
 ## Contents
 
@@ -9,8 +9,8 @@
 
 ## Quick Links
 
-- **Landing Page**: https://www.optichantier.com
-- **Contact**: contact@optichantier.com
+- **Landing Page**: https://www.bricknote.ai
+- **Contact**: contact@bricknote.ai
 
 ## Tech Stack
 

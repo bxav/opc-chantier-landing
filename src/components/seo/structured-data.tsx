@@ -2,17 +2,17 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "OptiChantier",
-    url: "https://www.optichantier.com",
-    logo: "https://www.optichantier.com/icon.svg",
+    name: "BrickNote",
+    url: "https://www.bricknote.ai",
+    logo: "https://www.bricknote.ai/icon.svg",
     description:
-      "OptiChantier est une application iOS de gestion de chantier pour les professionnels du BTP.",
+      "BrickNote est une application iOS de gestion de chantier pour les professionnels du BTP.",
     foundingDate: "2024",
     sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
-      email: "contact@optichantier.com",
+      email: "contact@bricknote.ai",
       availableLanguage: ["French"],
     },
   }
@@ -29,7 +29,7 @@ export function SoftwareApplicationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "OptiChantier",
+    name: "BrickNote",
     operatingSystem: "iOS",
     applicationCategory: "BusinessApplication",
     description:
@@ -48,11 +48,11 @@ export function SoftwareApplicationSchema() {
       "Mode hors ligne",
       "Gestion multi-projets",
     ],
-    screenshot: "https://www.optichantier.com/opengraph-image",
+    screenshot: "https://www.bricknote.ai/opengraph-image",
     softwareVersion: "1.0",
     author: {
       "@type": "Organization",
-      name: "OptiChantier",
+      name: "BrickNote",
     },
   }
 
@@ -139,15 +139,15 @@ export function ArticleSchema({
     url: url,
     author: {
       "@type": "Organization",
-      name: "OptiChantier",
-      url: "https://www.optichantier.com",
+      name: "BrickNote",
+      url: "https://www.bricknote.ai",
     },
     publisher: {
       "@type": "Organization",
-      name: "OptiChantier",
+      name: "BrickNote",
       logo: {
         "@type": "ImageObject",
-        url: "https://www.optichantier.com/icon.svg",
+        url: "https://www.bricknote.ai/icon.svg",
       },
     },
     mainEntityOfPage: {

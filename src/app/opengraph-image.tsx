@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og"
 
 export const runtime = "edge"
 
-export const alt = "OptiChantier - L'app iOS de pilotage de chantier"
+export const alt = "BrickNote - L'app iOS de pilotage de chantier"
 export const size = {
   width: 1200,
   height: 630,
@@ -41,15 +41,17 @@ export default async function OGImage() {
           <svg
             width="70"
             height="70"
-            viewBox="0 0 24 24"
+            viewBox="0 0 32 32"
             fill="none"
             stroke="white"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-            <polyline points="9 22 9 12 15 12 15 22" />
+            <path d="M5 10 L22 10 L27 15 L27 22 L5 22 Z"/>
+            <path d="M22 10 L22 15 L27 15"/>
+            <line x1="8" y1="16" x2="24" y2="16"/>
+            <line x1="8" y1="19" x2="18" y2="19"/>
           </svg>
         </div>
 
@@ -63,7 +65,7 @@ export default async function OGImage() {
             letterSpacing: "-0.02em",
           }}
         >
-          OptiChantier
+          BrickNote
         </div>
 
         {/* Subtitle */}

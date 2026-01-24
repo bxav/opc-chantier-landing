@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo"
 
 export const metadata: Metadata = {
   title: "Politique de confidentialite",
-  description: "Politique de confidentialite d'OptiChantier. Comment nous collectons, utilisons et protegeons vos donnees personnelles.",
+  description: "Politique de confidentialite d'BrickNote. Comment nous collectons, utilisons et protegeons vos donnees personnelles.",
 }
 
 export default function PolitiqueConfidentialitePage() {
@@ -13,8 +13,8 @@ export default function PolitiqueConfidentialitePage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Accueil", url: "https://www.optichantier.com" },
-          { name: "Politique de confidentialite", url: "https://www.optichantier.com/politique-confidentialite" },
+          { name: "Accueil", url: "https://www.bricknote.ai" },
+          { name: "Politique de confidentialite", url: "https://www.bricknote.ai/politique-confidentialite" },
         ]}
       />
       <main className="min-h-screen">
@@ -40,7 +40,7 @@ export default function PolitiqueConfidentialitePage() {
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                   <li><strong className="text-foreground font-semibold">APITHINGS</strong></li>
                   <li>SIREN : 890 251 184</li>
-                  <li>Email : contact@optichantier.com</li>
+                  <li>Email : contact@bricknote.ai</li>
                 </ul>
               </div>
 
@@ -49,7 +49,7 @@ export default function PolitiqueConfidentialitePage() {
 
                 <h3 className="text-xl font-serif font-semibold mt-6 mb-3">2.1 Donnees stockees localement</h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  L&apos;application OptiChantier stocke les donnees suivantes{" "}
+                  L&apos;application BrickNote stocke les donnees suivantes{" "}
                   <strong className="text-foreground font-semibold">uniquement sur votre appareil</strong> :
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
@@ -155,7 +155,7 @@ export default function PolitiqueConfidentialitePage() {
                 </ul>
                 <p className="text-muted-foreground leading-relaxed">
                   Pour exercer vos droits, contactez-nous a :{" "}
-                  <strong className="text-foreground font-semibold">contact@optichantier.com</strong>
+                  <strong className="text-foreground font-semibold">contact@bricknote.ai</strong>
                 </p>
               </div>
 
@@ -175,7 +175,7 @@ export default function PolitiqueConfidentialitePage() {
               <div>
                 <h2 className="text-2xl font-serif font-semibold mb-4">10. Cookies</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Le site web optichantier.com utilise uniquement des cookies essentiels au fonctionnement.
+                  Le site web bricknote.ai utilise uniquement des cookies essentiels au fonctionnement.
                   Aucun cookie publicitaire ou de tracking n&apos;est utilise.
                 </p>
               </div>
@@ -183,7 +183,7 @@ export default function PolitiqueConfidentialitePage() {
               <div>
                 <h2 className="text-2xl font-serif font-semibold mb-4">11. Mineurs</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  L&apos;application OptiChantier est destinee aux professionnels du BTP.
+                  L&apos;application BrickNote est destinee aux professionnels du BTP.
                   Elle n&apos;est pas concue pour etre utilisee par des mineurs de moins de 16 ans.
                 </p>
               </div>
@@ -210,7 +210,7 @@ export default function PolitiqueConfidentialitePage() {
                   Pour toute question concernant cette politique de confidentialite :
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                  <li>Email : contact@optichantier.com</li>
+                  <li>Email : contact@bricknote.ai</li>
                   <li>Formulaire :{" "}
                     <a href="/contact" className="text-primary hover:underline">
                       Page contact

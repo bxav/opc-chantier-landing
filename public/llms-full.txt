@@ -1,8 +1,8 @@
-# OptiChantier - Documentation Complete
+# BrickNote - Documentation Complete
 
 > Application iOS de pilotage de chantier pour les professionnels du BTP. Notes vocales, photos annotees, comptes-rendus IA et mode hors ligne.
 
-OptiChantier est une application gratuite pour iPhone destinee aux OPC, conducteurs de travaux et chefs de chantier. Elle permet de capturer des notes vocales, annoter des photos, generer des comptes-rendus automatiques par IA, et fonctionne entierement hors ligne.
+BrickNote est une application gratuite pour iPhone destinee aux OPC, conducteurs de travaux et chefs de chantier. Elle permet de capturer des notes vocales, annoter des photos, generer des comptes-rendus automatiques par IA, et fonctionne entierement hors ligne.
 
 ## Fonctionnalites principales
 
@@ -49,45 +49,45 @@ Organisez vos chantiers par projet. Retrouvez facilement l'historique des notes,
 
 ### Guide OPC batiment : role et missions
 Le role de l'OPC dans un projet de construction : coordination des intervenants, planification des travaux, animation des reunions, suivi de l'avancement.
-URL: https://www.optichantier.com/ressources/opc-batiment-role-missions
+URL: https://www.bricknote.ai/ressources/opc-batiment-role-missions
 
 ### Rediger un compte rendu de chantier
 Les bonnes pratiques pour rediger des comptes-rendus de chantier clairs et exploitables : structure, informations essentielles, diffusion.
-URL: https://www.optichantier.com/ressources/rediger-compte-rendu-chantier
+URL: https://www.bricknote.ai/ressources/rediger-compte-rendu-chantier
 
 ### Optimiser les reunions de chantier
 Comment rendre vos reunions de chantier plus efficaces : preparation, animation, outils de prise de notes, suivi des actions.
-URL: https://www.optichantier.com/ressources/optimiser-reunions-chantier
+URL: https://www.bricknote.ai/ressources/optimiser-reunions-chantier
 
 ### Photos annotees pour la communication chantier
 L'interet des photos annotees pour documenter et communiquer sur les situations terrain : localisation precise, mesures, contexte visuel.
-URL: https://www.optichantier.com/ressources/photos-annotees-communication-chantier
+URL: https://www.bricknote.ai/ressources/photos-annotees-communication-chantier
 
 ### L'IA dans la construction
 Les applications de l'intelligence artificielle dans le BTP : transcription, generation de documents, assistance technique, analyse predictive.
-URL: https://www.optichantier.com/ressources/ia-construction-tendances-2026
+URL: https://www.bricknote.ai/ressources/ia-construction-tendances-2026
 
 ---
 
 ## Pages du site
 
-- [Accueil](https://www.optichantier.com/): Presentation de l'application et de ses fonctionnalites
-- [Cas d'utilisation](https://www.optichantier.com/cas-utilisation): Scenarios d'usage par metier (OPC, Conducteur, Chef de chantier)
-- [Ressources](https://www.optichantier.com/ressources): Blog avec guides et conseils pour les professionnels du BTP
-- [Contact](https://www.optichantier.com/contact): Formulaire de contact et FAQ
+- [Accueil](https://www.bricknote.ai/): Presentation de l'application et de ses fonctionnalites
+- [Cas d'utilisation](https://www.bricknote.ai/cas-utilisation): Scenarios d'usage par metier (OPC, Conducteur, Chef de chantier)
+- [Ressources](https://www.bricknote.ai/ressources): Blog avec guides et conseils pour les professionnels du BTP
+- [Contact](https://www.bricknote.ai/contact): Formulaire de contact et FAQ
 
 ---
 
 ## FAQ
 
-### OptiChantier est-il gratuit ?
-Oui, OptiChantier est entierement gratuit. Aucun abonnement, aucun frais cache.
+### BrickNote est-il gratuit ?
+Oui, BrickNote est entierement gratuit. Aucun abonnement, aucun frais cache.
 
 ### L'application fonctionne-t-elle hors ligne ?
 Oui, toutes les fonctionnalites sont disponibles hors connexion. La synchronisation est automatique.
 
-### Sur quels appareils fonctionne OptiChantier ?
-OptiChantier est disponible sur iPhone. Une version Android est prevue.
+### Sur quels appareils fonctionne BrickNote ?
+BrickNote est disponible sur iPhone. Une version Android est prevue.
 
 ### Mes donnees sont-elles securisees ?
 Oui, vos donnees sont chiffrees et stockees de maniere securisee. Vous restez proprietaire de vos donnees.
@@ -96,5 +96,5 @@ Oui, vos donnees sont chiffrees et stockees de maniere securisee. Vous restez pr
 
 ## Contact
 
-Site web: https://www.optichantier.com
-Contact: https://www.optichantier.com/contact
+Site web: https://www.bricknote.ai
+Contact: https://www.bricknote.ai/contact

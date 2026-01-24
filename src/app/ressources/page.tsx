@@ -4,7 +4,7 @@ import { PageHeader, Breadcrumb } from "@/components/shared"
 import { ArticleList } from "@/components/blog"
 
 export const metadata: Metadata = {
-  title: "Ressources - OptiChantier",
+  title: "Ressources - BrickNote",
   description: "Guides, conseils et actualites pour optimiser la gestion de vos chantiers. Articles pratiques pour les professionnels du BTP.",
 }
 

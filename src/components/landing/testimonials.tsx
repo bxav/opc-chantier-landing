@@ -6,7 +6,7 @@ import { AnimateOnScroll } from "@/components/shared/animate-on-scroll"
 const testimonials = [
   {
     quote:
-      "OptiChantier a revolutionne notre facon de documenter les reunions. Plus besoin de prendre des notes a la main, tout est enregistre et resume automatiquement.",
+      "BrickNote a revolutionne notre facon de documenter les reunions. Plus besoin de prendre des notes a la main, tout est enregistre et resume automatiquement.",
     author: "Marie Dubois",
     role: "Conductrice de travaux",
     company: "BTP Lyon",
@@ -41,7 +41,7 @@ export function Testimonials() {
             <span className="font-serif text-gradient-primary">confiance</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Decouvrez ce que nos utilisateurs disent d&apos;OptiChantier.
+            Decouvrez ce que nos utilisateurs disent d&apos;BrickNote.
           </p>
         </AnimateOnScroll>
 

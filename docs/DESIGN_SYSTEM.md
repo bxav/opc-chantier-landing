@@ -1,9 +1,9 @@
-# OptiChantier - Design System & Graphical Charter
+# BrickNote - Design System & Graphical Charter
 
 ## Brand Identity
 
 ### Brand Essence
-OptiChantier combines **professionalism** with **approachability**. The design reflects the robustness of the construction industry while maintaining a modern, digital-first aesthetic.
+BrickNote combines **professionalism** with **approachability**. The design reflects the robustness of the construction industry while maintaining a modern, digital-first aesthetic.
 
 ### Brand Attributes
 - **Reliable** - Works offline, data stays local
@@ -18,7 +18,7 @@ OptiChantier combines **professionalism** with **approachability**. The design r
 ### Primary Logo
 The logo consists of:
 1. **Icon**: A house/building silhouette in a rounded square
-2. **Wordmark**: "OptiChantier" in bold sans-serif
+2. **Wordmark**: "BrickNote" in bold sans-serif
 
 ### Logo Specifications
 ```

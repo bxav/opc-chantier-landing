@@ -6,12 +6,12 @@ import { FAQSchema, BreadcrumbSchema } from "@/components/seo"
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contactez l'equipe OptiChantier. Nous repondons a toutes vos questions sous 24h.",
+  description: "Contactez l'equipe BrickNote. Nous repondons a toutes vos questions sous 24h.",
 }
 
 const faqs = [
   {
-    question: "OptiChantier est-il vraiment gratuit ?",
+    question: "BrickNote est-il vraiment gratuit ?",
     answer: "Oui, l'application est entierement gratuite et fonctionne sans inscription.",
   },
   {
@@ -23,8 +23,8 @@ const faqs = [
     answer: "Oui, toutes les fonctionnalites principales sont disponibles sans connexion internet.",
   },
   {
-    question: "Sur quels appareils fonctionne OptiChantier ?",
-    answer: "OptiChantier sera disponible sur iPhone via l'App Store. Une version iPad est egalement prevue.",
+    question: "Sur quels appareils fonctionne BrickNote ?",
+    answer: "BrickNote sera disponible sur iPhone via l'App Store. Une version iPad est egalement prevue.",
   },
 ]
 
@@ -34,8 +34,8 @@ export default function ContactPage() {
       <FAQSchema items={faqs} />
       <BreadcrumbSchema
         items={[
-          { name: "Accueil", url: "https://www.optichantier.com" },
-          { name: "Contact", url: "https://www.optichantier.com/contact" },
+          { name: "Accueil", url: "https://www.bricknote.ai" },
+          { name: "Contact", url: "https://www.bricknote.ai/contact" },
         ]}
       />
       <main className="min-h-screen">

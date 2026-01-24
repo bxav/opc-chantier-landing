@@ -71,7 +71,7 @@ export function Benefits() {
             </AnimateOnScroll>
             <AnimateOnScroll delay={100}>
               <p className="text-lg text-muted-foreground mb-10 max-w-lg">
-                OptiChantier est pense pour les professionnels du BTP qui ont
+                BrickNote est pense pour les professionnels du BTP qui ont
                 besoin d&apos;un outil simple, rapide et fiable.
               </p>
             </AnimateOnScroll>

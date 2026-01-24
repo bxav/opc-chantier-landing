@@ -25,12 +25,12 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   if (!article) {
     return {
-      title: "Article non trouve - OptiChantier",
+      title: "Article non trouve - BrickNote",
     }
   }
 
   return {
-    title: `${article.title} - OptiChantier`,
+    title: `${article.title} - BrickNote`,
     description: article.excerpt,
   }
 }
@@ -45,7 +45,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   const relatedArticles = getRelatedArticles(slug)
 
-  const articleUrl = `https://www.optichantier.com/ressources/${article.slug}`
+  const articleUrl = `https://www.bricknote.ai/ressources/${article.slug}`
 
   return (
     <>
@@ -57,8 +57,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       />
       <BreadcrumbSchema
         items={[
-          { name: "Accueil", url: "https://www.optichantier.com" },
-          { name: "Ressources", url: "https://www.optichantier.com/ressources" },
+          { name: "Accueil", url: "https://www.bricknote.ai" },
+          { name: "Ressources", url: "https://www.bricknote.ai/ressources" },
           { name: article.title, url: articleUrl },
         ]}
       />

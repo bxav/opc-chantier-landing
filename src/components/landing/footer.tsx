@@ -32,16 +32,20 @@ export function Footer() {
               <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-primary/30">
                 <svg
                   className="w-5 h-5 text-primary-foreground"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 32 32"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
+                  <path d="M5 10 L22 10 L27 15 L27 22 L5 22 Z"/>
+                  <path d="M22 10 L22 15 L27 15"/>
+                  <line x1="8" y1="16" x2="24" y2="16"/>
+                  <line x1="8" y1="19" x2="18" y2="19"/>
                 </svg>
               </div>
-              <span className="font-bold text-lg">OptiChantier</span>
+              <span className="font-bold text-lg">BrickNote</span>
             </Link>
             <p className="text-white/60 text-sm max-w-sm mb-6">
               L&apos;application iOS de gestion de chantier. Notes, photos annotees, reunions et assistant IA.
@@ -104,7 +108,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/50">
-            &copy; 2026 OptiChantier. Tous droits reserves.
+            &copy; 2026 BrickNote. Tous droits reserves.
           </p>
           <div className="flex items-center gap-6 text-sm text-white/50">
             <Link href="/mentions-legales" className="hover:text-primary transition-colors">

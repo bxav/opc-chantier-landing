@@ -3,7 +3,7 @@ import { Mail, Clock, MessageCircle, HelpCircle } from "lucide-react"
 
 const faqs = [
   {
-    question: "OptiChantier est-il vraiment gratuit ?",
+    question: "BrickNote est-il vraiment gratuit ?",
     answer: "Oui, l'application est entierement gratuite et fonctionne sans inscription.",
   },
   {
@@ -29,10 +29,10 @@ export function ContactInfo() {
             <div>
               <h4 className="font-medium mb-1">Email</h4>
               <a
-                href="mailto:contact@optichantier.com"
+                href="mailto:contact@bricknote.ai"
                 className="text-primary hover:underline"
               >
-                contact@optichantier.com
+                contact@bricknote.ai
               </a>
             </div>
           </div>

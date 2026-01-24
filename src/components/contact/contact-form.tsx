@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Send } from "lucide-react"
 
-const CONTACT_EMAIL = "contact@optichantier.com"
+const CONTACT_EMAIL = "contact@bricknote.ai"
 
 const roles = [
   { value: "", label: "Selectionnez votre role" },
@@ -35,7 +35,7 @@ export function ContactForm() {
     const { firstName, lastName, email, company, role, message } = formData
     const name = [firstName, lastName].filter(Boolean).join(" ")
 
-    const subject = `Contact OptiChantier${role ? ` - ${role}` : ""}`
+    const subject = `Contact BrickNote${role ? ` - ${role}` : ""}`
     const bodyLines = []
     if (name) bodyLines.push(`Nom: ${name}`)
     if (email) bodyLines.push(`Email: ${email}`)

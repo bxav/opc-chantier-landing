@@ -5,8 +5,8 @@ import { PersonaCard, ScenarioSection } from "@/components/use-cases"
 import { ClipboardList, HardHat, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Cas d'utilisation - OptiChantier",
-  description: "Decouvrez comment OptiChantier s'adapte a chaque metier du BTP : OPC, Conducteur de travaux, Chef de chantier.",
+  title: "Cas d'utilisation - BrickNote",
+  description: "Decouvrez comment BrickNote s'adapte a chaque metier du BTP : OPC, Conducteur de travaux, Chef de chantier.",
 }
 
 const personas = [
@@ -87,7 +87,7 @@ const scenarios = [
       "Meilleure coordination inter-entreprises",
     ],
     quote: {
-      text: "Avant OptiChantier, je passais mes soirees a rediger les CR. Maintenant, c'est fait en 10 minutes.",
+      text: "Avant BrickNote, je passais mes soirees a rediger les CR. Maintenant, c'est fait en 10 minutes.",
       author: "Marie D.",
       company: "Bureau OPC Ile-de-France",
     },
@@ -147,7 +147,7 @@ export default function UseCasesPage() {
       <Breadcrumb items={[{ label: "Cas d'utilisation" }]} />
 
       <PageHeader
-        title="OptiChantier pour chaque metier"
+        title="BrickNote pour chaque metier"
         subtitle="Decouvrez comment l'application s'adapte a votre role et transforme votre quotidien sur le chantier."
         badge="Pour les pros du BTP"
       />

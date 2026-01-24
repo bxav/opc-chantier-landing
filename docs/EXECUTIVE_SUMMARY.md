@@ -1,8 +1,8 @@
-# OptiChantier - Executive Summary
+# BrickNote - Executive Summary
 
 ## Vision
 
-OptiChantier is a native iOS application designed to revolutionize construction site management for French BTP (Bâtiment et Travaux Publics) professionals. The app centralizes notes, annotated photos, meeting recordings, and AI-powered assistance in a single, offline-capable tool.
+BrickNote is a native iOS application designed to revolutionize construction site management for French BTP (Bâtiment et Travaux Publics) professionals. The app centralizes notes, annotated photos, meeting recordings, and AI-powered assistance in a single, offline-capable tool.
 
 ---
 
@@ -74,7 +74,7 @@ OptiChantier is a native iOS application designed to revolutionize construction 
 ## Landing Page Structure
 
 ```
-www.optichantier.com/
+www.bricknote.ai/
 ├── /                    # Homepage - Hero, Features, Benefits, Testimonials, CTA
 ├── /cas-utilisation     # Use cases by persona (OPC, Conducteur, Chef)
 ├── /ressources          # Blog with guides, tips, news
@@ -111,14 +111,14 @@ www.optichantier.com/
 
 ## Team
 
-OptiChantier is developed by a team passionate about bringing modern tools to traditional industries.
+BrickNote is developed by a team passionate about bringing modern tools to traditional industries.
 
 ---
 
 ## Contact
 
-- **Website**: https://www.optichantier.com
-- **Email**: contact@optichantier.com
+- **Website**: https://www.bricknote.ai
+- **Email**: contact@bricknote.ai
 
 ---
 

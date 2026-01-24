@@ -12,7 +12,7 @@ npm run lint   # ESLint
 
 ## Architecture
 
-Next.js 16 App Router landing page for OptiChantier (BTP construction iOS app).
+Next.js 16 App Router landing page for BrickNote (BTP construction iOS app).
 
 **Structure:**
 - `src/app/` - Pages using App Router (page.tsx, layout.tsx)

@@ -67,16 +67,20 @@ export function Navbar() {
               <div className="w-9 h-9 bg-primary rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:shadow-primary/30 group-hover:scale-105">
                 <svg
                   className="w-5 h-5 text-primary-foreground transition-transform duration-300 group-hover:scale-110"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 32 32"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
+                  <path d="M5 10 L22 10 L27 15 L27 22 L5 22 Z"/>
+                  <path d="M22 10 L22 15 L27 15"/>
+                  <line x1="8" y1="16" x2="24" y2="16"/>
+                  <line x1="8" y1="19" x2="18" y2="19"/>
                 </svg>
               </div>
-              <span className="font-bold text-lg tracking-tight">OptiChantier</span>
+              <span className="font-bold text-lg tracking-tight">BrickNote</span>
             </Link>
 
             {/* Desktop Navigation */}

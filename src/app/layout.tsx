@@ -20,31 +20,31 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: "OptiChantier - L'app iOS de pilotage de chantier",
-    template: "%s | OptiChantier",
+    default: "BrickNote - L'app iOS de pilotage de chantier",
+    template: "%s | BrickNote",
   },
   description:
     "Pilotez vos chantiers BTP avec simplicité. Notes vocales, photos annotées, comptes-rendus IA et mode hors ligne. Bientôt sur l'App Store.",
   keywords: ["chantier", "BTP", "OPC", "gestion", "construction", "réunion", "assistant IA", "hors ligne", "iOS", "iPhone"],
-  authors: [{ name: "OptiChantier" }],
-  creator: "OptiChantier",
-  publisher: "OptiChantier",
-  metadataBase: new URL("https://www.optichantier.com"),
+  authors: [{ name: "BrickNote" }],
+  creator: "BrickNote",
+  publisher: "BrickNote",
+  metadataBase: new URL("https://www.bricknote.ai"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "OptiChantier - L'app iOS de pilotage de chantier",
+    title: "BrickNote - L'app iOS de pilotage de chantier",
     description:
       "Pilotez vos chantiers BTP avec simplicité. Notes vocales, photos annotées, comptes-rendus IA et mode hors ligne.",
-    url: "https://www.optichantier.com",
-    siteName: "OptiChantier",
+    url: "https://www.bricknote.ai",
+    siteName: "BrickNote",
     locale: "fr_FR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OptiChantier - Pilotage de chantier sur iOS",
+    title: "BrickNote - Pilotage de chantier sur iOS",
     description: "Notes vocales, photos annotées, assistant IA. Bientôt sur l'App Store.",
   },
   robots: {

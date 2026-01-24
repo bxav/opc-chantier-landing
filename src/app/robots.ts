@@ -33,6 +33,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://www.optichantier.com/sitemap.xml",
+    sitemap: "https://www.bricknote.ai/sitemap.xml",
   }
 }

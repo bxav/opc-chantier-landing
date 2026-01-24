@@ -57,7 +57,7 @@ export function CTA() {
           </h2>
 
           <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto">
-            Commencez a utiliser OptiChantier des maintenant. Vos donnees restent sur votre appareil, aucun compte n&apos;est requis.
+            Commencez a utiliser BrickNote des maintenant. Vos donnees restent sur votre appareil, aucun compte n&apos;est requis.
           </p>
         </AnimateOnScroll>
 

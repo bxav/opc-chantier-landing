@@ -1,5 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background rounded square -->
   <rect width="512" height="512" rx="102" fill="#ea580c"/>
-  <path d="M96 208l160-128 160 128v208a32 32 0 0 1-32 32H128a32 32 0 0 1-32-32z" fill="none" stroke="white" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M192 448V288h128v160" fill="none" stroke="white" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Brick-shaped note: wider proportions (2:1 like a brick) + folded corner -->
+  <g fill="none" stroke="white" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main brick-note body -->
+    <path d="M80 160 L360 160 L432 232 L432 352 L80 352 Z"/>
+    <!-- Folded corner (dog ear) -->
+    <path d="M360 160 L360 232 L432 232"/>
+    <!-- Text lines suggesting notes -->
+    <line x1="128" y1="264" x2="384" y2="264"/>
+    <line x1="128" y1="312" x2="300" y2="312"/>
+  </g>
 </svg>

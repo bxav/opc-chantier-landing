@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo"
 
 export const metadata: Metadata = {
   title: "Mentions legales",
-  description: "Mentions legales du site OptiChantier. Informations sur l'editeur, l'hebergeur et les droits de propriete intellectuelle.",
+  description: "Mentions legales du site BrickNote. Informations sur l'editeur, l'hebergeur et les droits de propriete intellectuelle.",
 }
 
 export default function MentionsLegalesPage() {
@@ -13,8 +13,8 @@ export default function MentionsLegalesPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: "Accueil", url: "https://www.optichantier.com" },
-          { name: "Mentions legales", url: "https://www.optichantier.com/mentions-legales" },
+          { name: "Accueil", url: "https://www.bricknote.ai" },
+          { name: "Mentions legales", url: "https://www.bricknote.ai/mentions-legales" },
         ]}
       />
       <main className="min-h-screen">
@@ -25,7 +25,7 @@ export default function MentionsLegalesPage() {
 
         <PageHeader
           title="Mentions legales"
-          subtitle="Informations legales concernant le site OptiChantier"
+          subtitle="Informations legales concernant le site BrickNote"
           badge="Legal"
         />
 
@@ -35,14 +35,14 @@ export default function MentionsLegalesPage() {
               <div>
                 <h2 className="text-2xl font-serif font-semibold mb-4">Editeur du site</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  Le site <strong className="text-foreground font-semibold">www.optichantier.com</strong> est edite par :
+                  Le site <strong className="text-foreground font-semibold">www.bricknote.ai</strong> est edite par :
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                   <li><strong className="text-foreground font-semibold">Raison sociale :</strong> APITHINGS</li>
                   <li><strong className="text-foreground font-semibold">Forme juridique :</strong> SAS (Societe par actions simplifiee)</li>
                   <li><strong className="text-foreground font-semibold">SIREN :</strong> 890 251 184</li>
                   <li><strong className="text-foreground font-semibold">Siege social :</strong> France</li>
-                  <li><strong className="text-foreground font-semibold">Email :</strong> contact@optichantier.com</li>
+                  <li><strong className="text-foreground font-semibold">Email :</strong> contact@bricknote.ai</li>
                 </ul>
               </div>
 
@@ -70,7 +70,7 @@ export default function MentionsLegalesPage() {
                 <h2 className="text-2xl font-serif font-semibold mb-4">Propriete intellectuelle</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   L&apos;ensemble des contenus (textes, images, graphismes, logo, icones, sons, logiciels)
-                  du site OptiChantier est la propriete exclusive de APITHINGS ou de ses partenaires
+                  du site BrickNote est la propriete exclusive de APITHINGS ou de ses partenaires
                   et est protege par les lois francaises et internationales relatives a la propriete intellectuelle.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
@@ -94,7 +94,7 @@ export default function MentionsLegalesPage() {
               <div>
                 <h2 className="text-2xl font-serif font-semibold mb-4">Cookies</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Le site OptiChantier utilise des cookies strictement necessaires au fonctionnement du site.
+                  Le site BrickNote utilise des cookies strictement necessaires au fonctionnement du site.
                   Ces cookies ne collectent aucune donnee personnelle a des fins publicitaires.
                 </p>
               </div>
