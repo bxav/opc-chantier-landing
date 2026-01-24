@@ -46,6 +46,7 @@ description: "Short description"
 date: 2026-01-15
 category: guide | conseil | actualite
 readTime: 8
+image: "/images/blog/article-image.png"  # optional
 translationKey: unique-key-for-translations
 ```
 
@@ -53,3 +54,22 @@ translationKey: unique-key-for-translations
 - `getBlogPosts(locale)` - all posts for locale
 - `getBlogPost(slug, locale)` - single post
 - `getTranslation(translationKey, locale)` - get alternate language version
+
+## Image Generation
+
+Generate blog images using Nano Banana Pro (Gemini 3 Pro Image).
+
+**Setup:** Add `GOOGLE_AI_API_KEY` to `.env.local`
+
+**Generate images:**
+```bash
+npx tsx scripts/generate-blog-images.ts
+```
+
+**Script behavior:**
+- Generates 2K 16:9 images for each article
+- Skips existing images (delete to regenerate)
+- Auto-updates frontmatter with image paths
+- Images saved to `public/images/blog/`
+
+**Adding new articles:** Edit `scripts/generate-blog-images.ts` to add prompts for new articles
