@@ -5,7 +5,7 @@ import { Link } from "@/i18n/routing"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, ArrowRight, FileText, Camera, Cpu } from "lucide-react"
-import { Article, getCategoryLabel, categoryColors } from "@/content/articles"
+import { getCategoryLabel, categoryColors, type Post } from "@/lib/content"
 
 const categoryIcons = {
   guide: FileText,
@@ -20,26 +20,31 @@ const categoryGradients = {
 }
 
 interface ArticleCardProps {
-  article: Article
+  post: Post
 }
 
-export function ArticleCard({ article }: ArticleCardProps) {
+export function ArticleCard({ post }: ArticleCardProps) {
   const locale = useLocale()
   const t = useTranslations("resources")
 
-  const formattedDate = new Date(article.date).toLocaleDateString(locale === "en" ? "en-US" : "fr-FR", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  })
+  const formattedDate = new Date(post.date).toLocaleDateString(
+    locale === "en" ? "en-US" : "fr-FR",
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }
+  )
 
-  const Icon = categoryIcons[article.category]
+  const Icon = categoryIcons[post.category]
 
   return (
-    <Link href={{ pathname: "/resources/[slug]", params: { slug: article.slug } }}>
+    <Link href={{ pathname: "/resources/[slug]", params: { slug: post.slug } }}>
       <Card className="group h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
         {/* Thumbnail */}
-        <div className={`aspect-video bg-gradient-to-br ${categoryGradients[article.category]} flex items-center justify-center relative overflow-hidden`}>
+        <div
+          className={`aspect-video bg-gradient-to-br ${categoryGradients[post.category]} flex items-center justify-center relative overflow-hidden`}
+        >
           {/* Decorative pattern */}
           <div className="absolute inset-0 opacity-30">
             <div className="absolute top-4 left-4 w-20 h-20 border-2 border-current rounded-full opacity-20" />
@@ -55,22 +60,22 @@ export function ArticleCard({ article }: ArticleCardProps) {
           <div className="flex items-center gap-3">
             <Badge
               variant="secondary"
-              className={categoryColors[article.category]}
+              className={categoryColors[post.category]}
             >
-              {getCategoryLabel(article.category, locale)}
+              {getCategoryLabel(post.category, locale)}
             </Badge>
             <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <Clock className="w-3 h-3" />
-              {article.readTime} min
+              {post.readTime} min
             </div>
           </div>
 
           <h3 className="font-semibold text-lg leading-tight group-hover:text-primary transition-colors line-clamp-2">
-            {article.title}
+            {post.title}
           </h3>
 
           <p className="text-sm text-muted-foreground line-clamp-2">
-            {article.excerpt}
+            {post.description}
           </p>
 
           <div className="flex items-center justify-between pt-2">

@@ -6,7 +6,7 @@ import { Breadcrumb } from "@/components/shared"
 import { ArticleContent, ArticleCard } from "@/components/blog"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
-import { getArticleBySlug, getRelatedArticles, getArticlesByLocale } from "@/content/articles"
+import { getBlogPost, getRelatedPosts, getBlogPosts, getTranslation } from "@/lib/content"
 import { ArticleSchema, BreadcrumbSchema } from "@/components/seo"
 import { Link } from "@/i18n/routing"
 import { locales } from "@/i18n/config"
@@ -16,11 +16,11 @@ interface ArticlePageProps {
 }
 
 export async function generateStaticParams() {
-  // Generate params for all locales and all articles
+  // Generate params for all locales and all posts
   return locales.flatMap((locale) => {
-    const articles = getArticlesByLocale(locale)
-    return articles.map((article) => ({
-      slug: article.slug,
+    const posts = getBlogPosts(locale)
+    return posts.map((post) => ({
+      slug: post.slug,
       locale,
     }))
   })
@@ -29,17 +29,36 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { slug, locale } = await params
   const t = await getTranslations({ locale, namespace: "resources" })
-  const article = getArticleBySlug(slug, locale)
+  const post = getBlogPost(slug, locale)
 
-  if (!article) {
+  if (!post) {
     return {
       title: t("articleNotFound"),
     }
   }
 
+  const baseUrl = "https://www.bricknote.ai"
+  const localePath = locale === "en" ? "" : `/${locale}`
+  const resourcesPath = locale === "en" ? "/resources" : "/ressources"
+
+  // Build alternate language links
+  const languages: Record<string, string> = {}
+  const translation = getTranslation(post.translationKey, locale === "en" ? "fr" : "en")
+
+  if (translation) {
+    const altLocale = translation.locale
+    const altPath = altLocale === "en" ? "" : `/${altLocale}`
+    const altResourcesPath = altLocale === "en" ? "/resources" : "/ressources"
+    languages[altLocale] = `${baseUrl}${altPath}${altResourcesPath}/${translation.slug}`
+  }
+  languages[locale] = `${baseUrl}${localePath}${resourcesPath}/${slug}`
+
   return {
-    title: `${article.title} - BrickNote`,
-    description: article.excerpt,
+    title: `${post.title} - BrickNote`,
+    description: post.description,
+    alternates: {
+      languages,
+    },
   }
 }
 
@@ -50,23 +69,23 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const t = await getTranslations({ locale, namespace: "resources" })
   const tCommon = await getTranslations({ locale, namespace: "common" })
 
-  const article = getArticleBySlug(slug, locale)
+  const post = getBlogPost(slug, locale)
 
-  if (!article) {
+  if (!post) {
     notFound()
   }
 
-  const relatedArticles = getRelatedArticles(slug, locale)
+  const relatedPosts = getRelatedPosts(slug, locale)
 
   const baseUrl = "https://www.bricknote.ai"
   const localePath = locale === "en" ? "" : `/${locale}`
   const resourcesPath = locale === "en" ? "/resources" : "/ressources"
-  const articleUrl = `${baseUrl}${localePath}${resourcesPath}/${article.slug}`
+  const articleUrl = `${baseUrl}${localePath}${resourcesPath}/${post.slug}`
 
   const breadcrumbSchemaItems = [
     { name: tCommon("home"), url: `${baseUrl}${localePath}` },
     { name: t("title"), url: `${baseUrl}${localePath}${resourcesPath}` },
-    { name: article.title, url: articleUrl },
+    { name: post.title, url: articleUrl },
   ]
 
   // Get the localized breadcrumb label
@@ -75,9 +94,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       <ArticleSchema
-        title={article.title}
-        description={article.excerpt}
-        datePublished={article.date}
+        title={post.title}
+        description={post.description}
+        datePublished={post.date}
         url={articleUrl}
       />
       <BreadcrumbSchema items={breadcrumbSchemaItems} />
@@ -88,7 +107,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <Breadcrumb
           items={[
             { label: resourcesLabel, href: "/resources" },
-            { label: article.title },
+            { label: post.title },
           ]}
         />
 
@@ -101,17 +120,17 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               </Link>
             </Button>
 
-            <ArticleContent article={article} />
+            <ArticleContent post={post} />
 
             {/* Related articles */}
-            {relatedArticles.length > 0 && (
+            {relatedPosts.length > 0 && (
               <div className="mt-16 pt-16 border-t">
                 <h2 className="text-2xl font-serif font-semibold mb-8">
                   {tCommon("relatedArticles")}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
-                  {relatedArticles.map((related) => (
-                    <ArticleCard key={related.slug} article={related} />
+                  {relatedPosts.map((related) => (
+                    <ArticleCard key={related.slug} post={related} />
                   ))}
                 </div>
               </div>

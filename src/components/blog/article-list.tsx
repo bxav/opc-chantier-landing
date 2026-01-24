@@ -3,20 +3,32 @@
 import { useState } from "react"
 import { useLocale, useTranslations } from "next-intl"
 import { ArticleCard } from "./article-card"
-import { getArticlesByLocale, ArticleCategory, getCategoryLabel } from "@/content/articles"
+import {
+  getBlogPosts,
+  getCategoryLabel,
+  type ArticleCategory,
+} from "@/lib/content"
 
-const categories: (ArticleCategory | "all")[] = ["all", "guide", "conseil", "actualite"]
+const categories: (ArticleCategory | "all")[] = [
+  "all",
+  "guide",
+  "conseil",
+  "actualite",
+]
 
 export function ArticleList() {
-  const [activeCategory, setActiveCategory] = useState<ArticleCategory | "all">("all")
+  const [activeCategory, setActiveCategory] = useState<
+    ArticleCategory | "all"
+  >("all")
   const locale = useLocale()
   const t = useTranslations("resources")
 
-  const articles = getArticlesByLocale(locale)
+  const posts = getBlogPosts(locale)
 
-  const filteredArticles = activeCategory === "all"
-    ? articles
-    : articles.filter((article) => article.category === activeCategory)
+  const filteredPosts =
+    activeCategory === "all"
+      ? posts
+      : posts.filter((post) => post.category === activeCategory)
 
   return (
     <div className="space-y-8">
@@ -39,18 +51,21 @@ export function ArticleList() {
 
       {/* Articles grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredArticles.map((article, i) => (
+        {filteredPosts.map((post, i) => (
           <div
-            key={article.slug}
+            key={post.slug}
             className="opacity-0 animate-fade-up"
-            style={{ animationDelay: `${i * 100}ms`, animationFillMode: "forwards" }}
+            style={{
+              animationDelay: `${i * 100}ms`,
+              animationFillMode: "forwards",
+            }}
           >
-            <ArticleCard article={article} />
+            <ArticleCard post={post} />
           </div>
         ))}
       </div>
 
-      {filteredArticles.length === 0 && (
+      {filteredPosts.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
           {t("noArticles")}
         </div>

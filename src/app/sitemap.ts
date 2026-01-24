@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next"
-import { getArticlesByLocale } from "@/content/articles"
+import { getBlogPosts, getTranslation } from "@/lib/content"
 import { locales, defaultLocale } from "@/i18n/config"
 
 // Pathname mappings for each locale (English canonical paths as keys)
@@ -56,22 +56,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const articlePages: MetadataRoute.Sitemap = []
 
   for (const locale of locales) {
-    const articles = getArticlesByLocale(locale)
+    const posts = getBlogPosts(locale)
     const resourcesPath = locale === "en" ? "/resources" : "/ressources"
     const prefix = locale === defaultLocale ? "" : `/${locale}`
 
-    for (const article of articles) {
+    for (const post of posts) {
+      // Build alternates using translationKey
+      const languages: Record<string, string> = {}
+      languages[locale] = `${baseUrl}${prefix}${resourcesPath}/${post.slug}`
+
+      const altLocale = locale === "en" ? "fr" : "en"
+      const translation = getTranslation(post.translationKey, altLocale)
+      if (translation) {
+        const altPrefix = altLocale === defaultLocale ? "" : `/${altLocale}`
+        const altResourcesPath = altLocale === "en" ? "/resources" : "/ressources"
+        languages[altLocale] = `${baseUrl}${altPrefix}${altResourcesPath}/${translation.slug}`
+      }
+
       articlePages.push({
-        url: `${baseUrl}${prefix}${resourcesPath}/${article.slug}`,
-        lastModified: new Date(article.date),
+        url: `${baseUrl}${prefix}${resourcesPath}/${post.slug}`,
+        lastModified: new Date(post.date),
         changeFrequency: "monthly",
         priority: 0.6,
-        alternates: {
-          languages: {
-            en: `${baseUrl}/resources/${article.slug}`,
-            fr: `${baseUrl}/fr/ressources/${article.slug}`,
-          },
-        },
+        alternates: { languages },
       })
     }
   }
