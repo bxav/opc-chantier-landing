@@ -1,20 +1,27 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import Link from "next/link"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
+import NextLink from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { LocaleSwitcher } from "@/components/shared/locale-switcher"
 
-const navLinks = [
-  { href: "/#fonctionnalites", label: "Fonctionnalites" },
-  { href: "/cas-utilisation", label: "Cas d'utilisation" },
-  { href: "/ressources", label: "Ressources" },
-  { href: "/contact", label: "Contact" },
-]
+type StaticPathname = "/" | "/contact" | "/use-cases" | "/resources" | "/legal-notice" | "/terms" | "/privacy-policy"
+type NavLink = { href: StaticPathname; label: string; isHash?: false } | { href: string; label: string; isHash: true }
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const t = useTranslations("nav")
+
+  const navLinks: NavLink[] = [
+    { href: "/#features", label: t("features"), isHash: true },
+    { href: "/use-cases", label: t("useCases") },
+    { href: "/resources", label: t("resources") },
+    { href: "/contact", label: t("contact") },
+  ]
 
   const closeMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(false)
@@ -85,31 +92,45 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) =>
+                link.isHash ? (
+                  <NextLink
+                    key={link.href}
+                    href={link.href}
+                    className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
+                  >
+                    {link.label}
+                  </NextLink>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="px-4 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <div className="w-px h-6 bg-border mx-2" />
+              <LocaleSwitcher />
               <Button asChild className="rounded-full px-6 shadow-lg hover:shadow-primary/25 transition-all duration-300">
-                <Link href="/contact">Lancer l&apos;app</Link>
+                <Link href="/contact">{t("launchApp")}</Link>
               </Button>
             </div>
 
             {/* Mobile menu button */}
-            <button
-              className="md:hidden p-3 -mr-1 rounded-xl hover:bg-secondary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="md:hidden flex items-center gap-2">
+              <LocaleSwitcher />
+              <button
+                className="p-3 -mr-1 rounded-xl hover:bg-secondary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={isMobileMenuOpen ? t("closeMenu") : t("openMenu")}
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -135,23 +156,37 @@ export function Navbar() {
           }`}
         >
           <div className="px-4 py-6 space-y-1">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block px-4 py-4 rounded-xl text-base font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all min-h-[44px]"
-                onClick={closeMobileMenu}
-                style={{
-                  animationDelay: isMobileMenuOpen ? `${index * 50}ms` : "0ms",
-                }}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link, index) =>
+              link.isHash ? (
+                <NextLink
+                  key={link.href}
+                  href={link.href}
+                  className="block px-4 py-4 rounded-xl text-base font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all min-h-[44px]"
+                  onClick={closeMobileMenu}
+                  style={{
+                    animationDelay: isMobileMenuOpen ? `${index * 50}ms` : "0ms",
+                  }}
+                >
+                  {link.label}
+                </NextLink>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block px-4 py-4 rounded-xl text-base font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all min-h-[44px]"
+                  onClick={closeMobileMenu}
+                  style={{
+                    animationDelay: isMobileMenuOpen ? `${index * 50}ms` : "0ms",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
             <div className="pt-4">
               <Button asChild className="w-full rounded-xl min-h-[44px] text-base">
                 <Link href="/contact" onClick={closeMobileMenu}>
-                  Lancer l&apos;app
+                  {t("launchApp")}
                 </Link>
               </Button>
             </div>

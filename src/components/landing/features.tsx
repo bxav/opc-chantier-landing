@@ -1,5 +1,6 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import {
   Layers,
   Mic,
@@ -11,72 +12,44 @@ import {
 } from "lucide-react"
 import { AnimateOnScroll } from "@/components/shared/animate-on-scroll"
 
-const features = [
-  {
-    icon: MessageSquare,
-    title: "Assistant IA",
-    description:
-      "Posez vos questions sur le projet. L'assistant connait toutes vos notes et peut les resumer en un instant.",
-    size: "lg" as const,
-    gradient: true,
-  },
-  {
-    icon: Mic,
-    title: "Enregistrement reunion",
-    description:
-      "Enregistrez vos reunions de chantier. Transcription et resume automatique par IA.",
-    size: "wide" as const,
-  },
-  {
-    icon: Image,
-    title: "Photos annotees",
-    description:
-      "Prenez des photos et annotez-les directement. Cercles, fleches, texte - tout est possible.",
-    size: "default" as const,
-  },
-  {
-    icon: Layers,
-    title: "Multi-projets",
-    description:
-      "Gerez plusieurs chantiers en parallele. Basculez d'un projet a l'autre en un tap.",
-    size: "default" as const,
-  },
-  {
-    icon: Calendar,
-    title: "Journal chronologique",
-    description:
-      "Retrouvez facilement vos notes par date. Historique complet de chaque chantier.",
-    size: "default" as const,
-  },
-  {
-    icon: Wifi,
-    title: "Mode hors ligne",
-    description:
-      "Fonctionne sans connexion. Vos donnees se synchronisent des que le reseau revient.",
-    size: "default" as const,
-  },
+const featureKeys = [
+  { key: "aiAssistant", icon: MessageSquare, size: "lg" as const, gradient: true },
+  { key: "meetingRecording", icon: Mic, size: "wide" as const },
+  { key: "annotatedPhotos", icon: Image, size: "default" as const },
+  { key: "multiProject", icon: Layers, size: "default" as const },
+  { key: "chronologicalJournal", icon: Calendar, size: "default" as const },
+  { key: "offlineMode", icon: Wifi, size: "default" as const },
 ]
 
 export function Features() {
+  const t = useTranslations("features")
+
   return (
-    <section id="fonctionnalites" className="py-24 bg-muted/30">
+    <section id="features" className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            <span className="font-serif">Tout ce qu&apos;il vous faut,</span>
+            <span className="font-serif">{t("titleLine1")}</span>
             <br />
-            <span className="font-serif text-gradient-primary">rien de superflu</span>
+            <span className="font-serif text-gradient-primary">{t("titleLine2")}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Des outils penses pour le terrain, accessibles en quelques taps.
+            {t("subtitle")}
           </p>
         </AnimateOnScroll>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {features.map((feature, index) => (
-            <AnimateOnScroll key={feature.title} delay={index * 75} animation="scale-in">
-              <BentoCard {...feature} />
+          {featureKeys.map((feature, index) => (
+            <AnimateOnScroll key={feature.key} delay={index * 75} animation="scale-in">
+              <BentoCard
+                icon={feature.icon}
+                title={t(`items.${feature.key}.title`)}
+                description={t(`items.${feature.key}.description`)}
+                size={feature.size}
+                gradient={feature.gradient}
+                aiPoweredLabel={t("aiPowered")}
+              />
             </AnimateOnScroll>
           ))}
         </div>
@@ -91,12 +64,14 @@ function BentoCard({
   description,
   size,
   gradient,
+  aiPoweredLabel,
 }: {
   icon: React.ElementType
   title: string
   description: string
   size: "default" | "wide" | "lg"
   gradient?: boolean
+  aiPoweredLabel?: string
 }) {
   const sizeClasses = {
     default: "",
@@ -157,11 +132,11 @@ function BentoCard({
         </p>
 
         {/* Feature highlight for large card */}
-        {gradient && (
+        {gradient && aiPoweredLabel && (
           <div className="mt-6 pt-6 border-t border-border/50">
             <div className="flex items-center gap-2 text-sm">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-muted-foreground">Propulse par l&apos;IA Claude</span>
+              <span className="text-muted-foreground">{aiPoweredLabel}</span>
             </div>
           </div>
         )}

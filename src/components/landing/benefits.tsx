@@ -1,60 +1,34 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Check, FileText, Image, CheckCircle, Users, Clock, WifiOff } from "lucide-react"
 import { AnimateOnScroll, StaggerContainer } from "@/components/shared/animate-on-scroll"
 import { AnimatedCounter } from "@/components/shared/animated-counter"
 
-const benefits = [
-  {
-    title: "Prise en main immediate",
-    description: "Interface intuitive, aucune formation necessaire.",
-  },
-  {
-    title: "Donnees locales",
-    description:
-      "Vos informations restent sur votre appareil. Confidentialite garantie.",
-  },
-  {
-    title: "Mode vocal",
-    description: "Dictez vos notes et questions. L'app repond a voix haute.",
-  },
-  {
-    title: "Application native iOS",
-    description:
-      "Une vraie app iPhone, fluide et optimisee pour le terrain.",
-  },
-]
+const benefitKeys = ["immediateMastery", "localData", "voiceMode", "nativeIOS"]
 
-const stats = [
-  {
-    icon: Users,
-    value: 500,
-    suffix: "+",
-    label: "utilisateurs actifs",
-  },
-  {
-    icon: Clock,
-    value: 2,
-    suffix: " min",
-    label: "prise en main",
-  },
-  {
-    icon: WifiOff,
-    value: 100,
-    suffix: "%",
-    label: "hors ligne",
-  },
+const statKeys = [
+  { key: "activeUsers", icon: Users, value: 500, suffix: "+" },
+  { key: "setupTime", icon: Clock, value: 2, suffix: " min" },
+  { key: "offline", icon: WifiOff, value: 100, suffix: "%" },
 ]
 
 export function Benefits() {
+  const t = useTranslations("benefits")
+
   return (
     <section id="avantages" className="py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Row */}
         <div className="grid grid-cols-3 gap-4 lg:gap-8 mb-20 max-w-3xl mx-auto">
-          {stats.map((stat, index) => (
-            <AnimateOnScroll key={stat.label} delay={index * 100}>
-              <StatCard {...stat} />
+          {statKeys.map((stat, index) => (
+            <AnimateOnScroll key={stat.key} delay={index * 100}>
+              <StatCard
+                icon={stat.icon}
+                value={stat.value}
+                suffix={stat.suffix}
+                label={t(`stats.${stat.key}`)}
+              />
             </AnimateOnScroll>
           ))}
         </div>
@@ -64,21 +38,24 @@ export function Benefits() {
           <div>
             <AnimateOnScroll>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-                <span className="font-serif">Concu pour</span>
+                <span className="font-serif">{t("titleLine1")}</span>
                 <br />
-                <span className="font-serif text-gradient-primary">le terrain</span>
+                <span className="font-serif text-gradient-primary">{t("titleLine2")}</span>
               </h2>
             </AnimateOnScroll>
             <AnimateOnScroll delay={100}>
               <p className="text-lg text-muted-foreground mb-10 max-w-lg">
-                BrickNote est pense pour les professionnels du BTP qui ont
-                besoin d&apos;un outil simple, rapide et fiable.
+                {t("subtitle")}
               </p>
             </AnimateOnScroll>
 
             <StaggerContainer className="space-y-5" staggerDelay={100}>
-              {benefits.map((benefit) => (
-                <BenefitItem key={benefit.title} {...benefit} />
+              {benefitKeys.map((key) => (
+                <BenefitItem
+                  key={key}
+                  title={t(`items.${key}.title`)}
+                  description={t(`items.${key}.description`)}
+                />
               ))}
             </StaggerContainer>
           </div>
@@ -90,19 +67,19 @@ export function Benefits() {
 
             <FloatingCard
               icon={FileText}
-              text="CR reunion genere"
+              text={t("floatingCards.meetingReport")}
               className="absolute top-[10%] left-[10%] animate-float"
               variant="primary"
             />
             <FloatingCard
               icon={CheckCircle}
-              text="3 actions a suivre"
+              text={t("floatingCards.actionsToFollow")}
               className="absolute top-[40%] right-[5%] animate-float-delayed"
               variant="success"
             />
             <FloatingCard
               icon={Image}
-              text="12 photos ce mois"
+              text={t("floatingCards.photosThisMonth")}
               className="absolute bottom-[15%] left-[20%] animate-float-slow"
               variant="info"
             />

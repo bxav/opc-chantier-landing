@@ -1,3 +1,6 @@
+"use client"
+
+import { useTranslations } from "next-intl"
 import { Card, CardContent } from "@/components/ui/card"
 import { Quote } from "lucide-react"
 
@@ -14,6 +17,7 @@ interface ScenarioSectionProps {
     author: string
     company: string
   }
+  typicalDayLabel: string
 }
 
 export function ScenarioSection({
@@ -22,8 +26,10 @@ export function ScenarioSection({
   workflow,
   benefits,
   quote,
+  typicalDayLabel,
 }: ScenarioSectionProps) {
   const sectionId = role.toLowerCase().replace(/\s+/g, "-")
+  const t = useTranslations("useCases")
 
   return (
     <section id={sectionId} className="py-16 border-t border-border/50 scroll-mt-24">
@@ -32,7 +38,7 @@ export function ScenarioSection({
           {/* Workflow */}
           <div>
             <h3 className="text-2xl font-serif font-semibold mb-6" style={{ color }}>
-              Une journee type : {role}
+              {typicalDayLabel}: {role}
             </h3>
             <div className="space-y-4">
               {workflow.map((step, i) => (
@@ -53,7 +59,7 @@ export function ScenarioSection({
           <div className="space-y-8">
             <Card className="bg-card/50 border-0 shadow-none">
               <CardContent className="p-6">
-                <h4 className="font-semibold mb-4">Benefices concrets</h4>
+                <h4 className="font-semibold mb-4">{t("concreteBenefits")}</h4>
                 <ul className="space-y-2">
                   {benefits.map((benefit, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm">

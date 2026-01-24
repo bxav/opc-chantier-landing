@@ -1,21 +1,18 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Send } from "lucide-react"
 
 const CONTACT_EMAIL = "contact@bricknote.ai"
 
-const roles = [
-  { value: "", label: "Selectionnez votre role" },
-  { value: "OPC", label: "OPC" },
-  { value: "Conducteur de travaux", label: "Conducteur de travaux" },
-  { value: "Chef de chantier", label: "Chef de chantier" },
-  { value: "Autre", label: "Autre" },
-]
+const roleKeys = ["opc", "worksManager", "siteManager", "other"]
 
 export function ContactForm() {
+  const t = useTranslations("contact.form")
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -37,10 +34,10 @@ export function ContactForm() {
 
     const subject = `Contact BrickNote${role ? ` - ${role}` : ""}`
     const bodyLines = []
-    if (name) bodyLines.push(`Nom: ${name}`)
+    if (name) bodyLines.push(`${t("labels.firstName")}: ${name}`)
     if (email) bodyLines.push(`Email: ${email}`)
-    if (company) bodyLines.push(`Entreprise: ${company}`)
-    if (role) bodyLines.push(`Role: ${role}`)
+    if (company) bodyLines.push(`${t("labels.company")}: ${company}`)
+    if (role) bodyLines.push(`${t("labels.role")}: ${role}`)
     bodyLines.push("", message)
     const body = bodyLines.join("\n")
 
@@ -54,7 +51,7 @@ export function ContactForm() {
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
               <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                Prenom
+                {t("labels.firstName")}
               </label>
               <input
                 type="text"
@@ -63,12 +60,12 @@ export function ContactForm() {
                 value={formData.firstName}
                 onChange={handleChange}
                 className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                placeholder="Jean"
+                placeholder={t("placeholders.firstName")}
               />
             </div>
             <div>
               <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                Nom
+                {t("labels.lastName")}
               </label>
               <input
                 type="text"
@@ -77,7 +74,7 @@ export function ContactForm() {
                 value={formData.lastName}
                 onChange={handleChange}
                 className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                placeholder="Dupont"
+                placeholder={t("placeholders.lastName")}
               />
             </div>
           </div>
@@ -94,13 +91,13 @@ export function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-              placeholder="jean.dupont@entreprise.fr"
+              placeholder={t("placeholders.email")}
             />
           </div>
 
           <div>
             <label htmlFor="company" className="block text-sm font-medium mb-2">
-              Entreprise
+              {t("labels.company")}
             </label>
             <input
               type="text"
@@ -109,13 +106,13 @@ export function ContactForm() {
               value={formData.company}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-              placeholder="Nom de votre entreprise"
+              placeholder={t("placeholders.company")}
             />
           </div>
 
           <div>
             <label htmlFor="role" className="block text-sm font-medium mb-2">
-              Votre role
+              {t("labels.role")}
             </label>
             <select
               id="role"
@@ -124,9 +121,10 @@ export function ContactForm() {
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
             >
-              {roles.map((role) => (
-                <option key={role.value} value={role.value}>
-                  {role.label}
+              <option value="">{t("placeholders.selectRole")}</option>
+              {roleKeys.map((key) => (
+                <option key={key} value={t(`roles.${key}`)}>
+                  {t(`roles.${key}`)}
                 </option>
               ))}
             </select>
@@ -144,7 +142,7 @@ export function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
-              placeholder="Comment pouvons-nous vous aider ?"
+              placeholder={t("placeholders.message")}
             />
           </div>
 
@@ -153,7 +151,7 @@ export function ContactForm() {
             size="lg"
             className="w-full rounded-xl"
           >
-            Envoyer le message
+            {t("submit")}
             <Send className="w-4 h-4 ml-2" />
           </Button>
         </form>

@@ -1,11 +1,14 @@
 "use client"
 
-import Link from "next/link"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { AnimateOnScroll } from "@/components/shared/animate-on-scroll"
 
 export function CTA() {
+  const t = useTranslations("cta")
+
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Mesh gradient background */}
@@ -47,17 +50,17 @@ export function CTA() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-8">
             <Sparkles className="w-4 h-4 text-white" />
-            <span className="text-sm font-medium text-white/90">Gratuit et sans inscription</span>
+            <span className="text-sm font-medium text-white/90">{t("badge")}</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white mb-6">
-            <span className="font-serif">Pret a simplifier</span>
+            <span className="font-serif">{t("titleLine1")}</span>
             <br />
-            <span className="font-serif">votre quotidien ?</span>
+            <span className="font-serif">{t("titleLine2")}</span>
           </h2>
 
           <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto">
-            Commencez a utiliser BrickNote des maintenant. Vos donnees restent sur votre appareil, aucun compte n&apos;est requis.
+            {t("description")}
           </p>
         </AnimateOnScroll>
 
@@ -75,7 +78,7 @@ export function CTA() {
             "
           >
             <Link href="/contact" className="gap-2 text-lg font-semibold">
-              Lancer l&apos;application
+              {t("button")}
               <ArrowRight className="w-5 h-5" />
             </Link>
           </Button>
@@ -84,7 +87,7 @@ export function CTA() {
         {/* Trust note */}
         <AnimateOnScroll delay={300}>
           <p className="mt-8 text-sm text-white/60">
-            Bientot sur l&apos;App Store · Fonctionne hors ligne · Donnees 100% locales
+            {t("trustNote")}
           </p>
         </AnimateOnScroll>
       </div>

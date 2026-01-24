@@ -1,26 +1,13 @@
-import Link from "next/link"
+"use client"
+
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
+import NextLink from "next/link"
 import { Linkedin, Twitter, Github } from "lucide-react"
 
-const links = {
-  product: [
-    { label: "Fonctionnalites", href: "/#fonctionnalites" },
-    { label: "Cas d'utilisation", href: "/cas-utilisation" },
-    { label: "Lancer l'app", href: "/contact" },
-  ],
-  resources: [
-    { label: "Ressources", href: "/ressources" },
-    { label: "Contact", href: "/contact" },
-    { label: "Support", href: "/contact" },
-  ],
-}
-
-const socials = [
-  { icon: Linkedin, href: "/contact", label: "LinkedIn" },
-  { icon: Twitter, href: "/contact", label: "Twitter" },
-  { icon: Github, href: "/contact", label: "GitHub" },
-]
-
 export function Footer() {
+  const t = useTranslations("footer")
+
   return (
     <footer className="bg-surface-dark text-white/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,59 +35,98 @@ export function Footer() {
               <span className="font-bold text-lg">BrickNote</span>
             </Link>
             <p className="text-white/60 text-sm max-w-sm mb-6">
-              L&apos;application iOS de gestion de chantier. Notes, photos annotees, reunions et assistant IA.
+              {t("description")}
             </p>
 
             {/* Social links */}
             <div className="flex items-center gap-3">
-              {socials.map((social) => (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all duration-300"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-4 h-4" />
-                </Link>
-              ))}
+              <Link
+                href="/contact"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all duration-300"
+                aria-label="GitHub"
+              >
+                <Github className="w-4 h-4" />
+              </Link>
             </div>
           </div>
 
           {/* Product links */}
           <div>
             <h4 className="font-semibold text-sm text-white/50 uppercase tracking-wider mb-4">
-              Produit
+              {t("product")}
             </h4>
             <ul className="space-y-3">
-              {links.product.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <NextLink
+                  href="/#features"
+                  className="text-sm text-white/70 hover:text-primary transition-colors"
+                >
+                  {t("links.features")}
+                </NextLink>
+              </li>
+              <li>
+                <Link
+                  href="/use-cases"
+                  className="text-sm text-white/70 hover:text-primary transition-colors"
+                >
+                  {t("links.useCases")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/70 hover:text-primary transition-colors"
+                >
+                  {t("links.launchApp")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Resources links */}
           <div>
             <h4 className="font-semibold text-sm text-white/50 uppercase tracking-wider mb-4">
-              Ressources
+              {t("resources")}
             </h4>
             <ul className="space-y-3">
-              {links.resources.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-white/70 hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/resources"
+                  className="text-sm text-white/70 hover:text-primary transition-colors"
+                >
+                  {t("links.resources")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/70 hover:text-primary transition-colors"
+                >
+                  {t("links.contact")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/70 hover:text-primary transition-colors"
+                >
+                  {t("links.support")}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -108,17 +134,17 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="py-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/50">
-            &copy; 2026 BrickNote. Tous droits reserves.
+            &copy; {t("legal.copyright")}
           </p>
           <div className="flex items-center gap-6 text-sm text-white/50">
-            <Link href="/mentions-legales" className="hover:text-primary transition-colors">
-              Mentions legales
+            <Link href="/legal-notice" className="hover:text-primary transition-colors">
+              {t("legal.legalNotice")}
             </Link>
-            <Link href="/cgu" className="hover:text-primary transition-colors">
-              CGU
+            <Link href="/terms" className="hover:text-primary transition-colors">
+              {t("legal.terms")}
             </Link>
-            <Link href="/politique-confidentialite" className="hover:text-primary transition-colors">
-              Confidentialite
+            <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+              {t("legal.privacy")}
             </Link>
           </div>
         </div>

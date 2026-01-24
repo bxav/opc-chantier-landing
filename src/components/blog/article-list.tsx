@@ -1,13 +1,18 @@
 "use client"
 
 import { useState } from "react"
+import { useLocale, useTranslations } from "next-intl"
 import { ArticleCard } from "./article-card"
-import { articles, ArticleCategory, categoryLabels } from "@/content/articles"
+import { getArticlesByLocale, ArticleCategory, getCategoryLabel } from "@/content/articles"
 
 const categories: (ArticleCategory | "all")[] = ["all", "guide", "conseil", "actualite"]
 
 export function ArticleList() {
   const [activeCategory, setActiveCategory] = useState<ArticleCategory | "all">("all")
+  const locale = useLocale()
+  const t = useTranslations("resources")
+
+  const articles = getArticlesByLocale(locale)
 
   const filteredArticles = activeCategory === "all"
     ? articles
@@ -27,7 +32,7 @@ export function ArticleList() {
                 : "bg-secondary text-muted-foreground hover:text-foreground hover:bg-secondary/80"
             }`}
           >
-            {category === "all" ? "Tous" : categoryLabels[category]}
+            {category === "all" ? t("all") : getCategoryLabel(category, locale)}
           </button>
         ))}
       </div>
@@ -47,7 +52,7 @@ export function ArticleList() {
 
       {filteredArticles.length === 0 && (
         <div className="text-center py-12 text-muted-foreground">
-          Aucun article dans cette categorie pour le moment.
+          {t("noArticles")}
         </div>
       )}
     </div>

@@ -1,31 +1,39 @@
 import { Metadata } from "next"
 import { notFound } from "next/navigation"
-import Link from "next/link"
+import { getTranslations, setRequestLocale } from "next-intl/server"
 import { Navbar, Footer } from "@/components/landing"
 import { Breadcrumb } from "@/components/shared"
 import { ArticleContent, ArticleCard } from "@/components/blog"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
-import { articles, getArticleBySlug, getRelatedArticles } from "@/content/articles"
+import { getArticleBySlug, getRelatedArticles, getArticlesByLocale } from "@/content/articles"
 import { ArticleSchema, BreadcrumbSchema } from "@/components/seo"
+import { Link } from "@/i18n/routing"
+import { locales } from "@/i18n/config"
 
 interface ArticlePageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }
 
 export async function generateStaticParams() {
-  return articles.map((article) => ({
-    slug: article.slug,
-  }))
+  // Generate params for all locales and all articles
+  return locales.flatMap((locale) => {
+    const articles = getArticlesByLocale(locale)
+    return articles.map((article) => ({
+      slug: article.slug,
+      locale,
+    }))
+  })
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
-  const { slug } = await params
-  const article = getArticleBySlug(slug)
+  const { slug, locale } = await params
+  const t = await getTranslations({ locale, namespace: "resources" })
+  const article = getArticleBySlug(slug, locale)
 
   if (!article) {
     return {
-      title: "Article non trouve - BrickNote",
+      title: t("articleNotFound"),
     }
   }
 
@@ -36,16 +44,33 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
-  const { slug } = await params
-  const article = getArticleBySlug(slug)
+  const { slug, locale } = await params
+  setRequestLocale(locale)
+
+  const t = await getTranslations({ locale, namespace: "resources" })
+  const tCommon = await getTranslations({ locale, namespace: "common" })
+
+  const article = getArticleBySlug(slug, locale)
 
   if (!article) {
     notFound()
   }
 
-  const relatedArticles = getRelatedArticles(slug)
+  const relatedArticles = getRelatedArticles(slug, locale)
 
-  const articleUrl = `https://www.bricknote.ai/ressources/${article.slug}`
+  const baseUrl = "https://www.bricknote.ai"
+  const localePath = locale === "en" ? "" : `/${locale}`
+  const resourcesPath = locale === "en" ? "/resources" : "/ressources"
+  const articleUrl = `${baseUrl}${localePath}${resourcesPath}/${article.slug}`
+
+  const breadcrumbSchemaItems = [
+    { name: tCommon("home"), url: `${baseUrl}${localePath}` },
+    { name: t("title"), url: `${baseUrl}${localePath}${resourcesPath}` },
+    { name: article.title, url: articleUrl },
+  ]
+
+  // Get the localized breadcrumb label
+  const resourcesLabel = locale === "fr" ? "Ressources" : "Resources"
 
   return (
     <>
@@ -55,20 +80,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         datePublished={article.date}
         url={articleUrl}
       />
-      <BreadcrumbSchema
-        items={[
-          { name: "Accueil", url: "https://www.bricknote.ai" },
-          { name: "Ressources", url: "https://www.bricknote.ai/ressources" },
-          { name: article.title, url: articleUrl },
-        ]}
-      />
+      <BreadcrumbSchema items={breadcrumbSchemaItems} />
       <main className="min-h-screen">
         <div className="grain-overlay" />
         <Navbar />
 
         <Breadcrumb
           items={[
-            { label: "Ressources", href: "/ressources" },
+            { label: resourcesLabel, href: "/resources" },
             { label: article.title },
           ]}
         />
@@ -76,9 +95,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <section className="pt-8 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Button variant="ghost" asChild className="mb-8">
-              <Link href="/ressources" className="gap-2">
+              <Link href="/resources" className="gap-2">
                 <ArrowLeft className="w-4 h-4" />
-                Retour aux ressources
+                {t("backToResources")}
               </Link>
             </Button>
 
@@ -88,7 +107,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             {relatedArticles.length > 0 && (
               <div className="mt-16 pt-16 border-t">
                 <h2 className="text-2xl font-serif font-semibold mb-8">
-                  Articles similaires
+                  {tCommon("relatedArticles")}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {relatedArticles.map((related) => (

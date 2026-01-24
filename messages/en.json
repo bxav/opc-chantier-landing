@@ -1,0 +1,449 @@
+{
+  "metadata": {
+    "title": "BrickNote - The iOS Construction Site Management App",
+    "titleTemplate": "{title} | BrickNote",
+    "description": "Manage your construction sites with ease. Voice notes, annotated photos, AI-generated reports and offline mode. Coming soon to the App Store.",
+    "keywords": "construction, site management, OPC, management, building, meeting, AI assistant, offline, iOS, iPhone",
+    "ogTitle": "BrickNote - The iOS Construction Site Management App",
+    "ogDescription": "Manage your construction sites with ease. Voice notes, annotated photos, AI-generated reports and offline mode.",
+    "twitterTitle": "BrickNote - Construction Site Management on iOS",
+    "twitterDescription": "Voice notes, annotated photos, AI assistant. Coming soon to the App Store."
+  },
+  "common": {
+    "home": "Home",
+    "skipToContent": "Skip to main content",
+    "backTo": "Back to {page}",
+    "relatedArticles": "Related articles",
+    "lastUpdated": "Last updated: January 2026",
+    "readTime": "{minutes} min read"
+  },
+  "nav": {
+    "features": "Features",
+    "useCases": "Use Cases",
+    "resources": "Resources",
+    "contact": "Contact",
+    "launchApp": "Launch app",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "badge": "Coming soon to iOS",
+    "titleLine1": "Manage your construction sites",
+    "titleLine2": "with ease",
+    "description": "Centralize notes, photos and meeting reports. Annotate your images and ask questions to the AI assistant.",
+    "cta": "Start for free",
+    "learnMore": "Learn more",
+    "trustBadge": {
+      "offline": "100% offline",
+      "localData": "Local data",
+      "noSignup": "No sign-up required"
+    },
+    "mockup": {
+      "header": "My site",
+      "today": "Today",
+      "meetingTitle": "Site meeting",
+      "meetingSubtitle": "3 actions identified",
+      "photosTitle": "Zone B photos",
+      "photosSubtitle": "5 annotated photos",
+      "noteTitle": "Quick note",
+      "noteSubtitle": "Concrete delivery delay",
+      "navJournal": "Journal",
+      "navAssistant": "Assistant",
+      "navAgenda": "Calendar"
+    }
+  },
+  "features": {
+    "titleLine1": "Everything you need,",
+    "titleLine2": "nothing superfluous",
+    "subtitle": "Tools designed for the field, accessible in a few taps.",
+    "aiPowered": "Powered by Claude AI",
+    "items": {
+      "aiAssistant": {
+        "title": "AI Assistant",
+        "description": "Ask questions about your project. The assistant knows all your notes and can summarize them instantly."
+      },
+      "meetingRecording": {
+        "title": "Meeting recording",
+        "description": "Record your site meetings. Automatic AI transcription and summary."
+      },
+      "annotatedPhotos": {
+        "title": "Annotated photos",
+        "description": "Take photos and annotate them directly. Circles, arrows, text - anything is possible."
+      },
+      "multiProject": {
+        "title": "Multi-project",
+        "description": "Manage multiple sites in parallel. Switch from one project to another in a tap."
+      },
+      "chronologicalJournal": {
+        "title": "Chronological journal",
+        "description": "Easily find your notes by date. Complete history of each site."
+      },
+      "offlineMode": {
+        "title": "Offline mode",
+        "description": "Works without connection. Your data syncs as soon as the network returns."
+      }
+    }
+  },
+  "benefits": {
+    "titleLine1": "Built for",
+    "titleLine2": "the field",
+    "subtitle": "BrickNote is designed for construction professionals who need a simple, fast and reliable tool.",
+    "stats": {
+      "activeUsers": "active users",
+      "setupTime": "onboarding time",
+      "offline": "offline"
+    },
+    "items": {
+      "immediateMastery": {
+        "title": "Immediate use",
+        "description": "Intuitive interface, no training required."
+      },
+      "localData": {
+        "title": "Local data",
+        "description": "Your information stays on your device. Privacy guaranteed."
+      },
+      "voiceMode": {
+        "title": "Voice mode",
+        "description": "Dictate your notes and questions. The app responds aloud."
+      },
+      "nativeIOS": {
+        "title": "Native iOS app",
+        "description": "A real iPhone app, smooth and optimized for the field."
+      }
+    },
+    "floatingCards": {
+      "meetingReport": "Meeting report generated",
+      "actionsToFollow": "3 actions to follow",
+      "photosThisMonth": "12 photos this month"
+    }
+  },
+  "testimonials": {
+    "titleLine1": "They trust",
+    "titleLine2": "us",
+    "subtitle": "Discover what our users say about BrickNote.",
+    "items": {
+      "marie": {
+        "quote": "BrickNote has revolutionized how we document meetings. No more handwritten notes, everything is recorded and summarized automatically.",
+        "author": "Marie Dubois",
+        "role": "Site Supervisor",
+        "company": "BTP Lyon",
+        "avatar": "MD"
+      },
+      "thomas": {
+        "quote": "Photo annotation directly on site saves us a huge amount of time. No more email exchanges to explain where the problem is.",
+        "author": "Thomas Martin",
+        "role": "Site Manager",
+        "company": "Constructions Martin",
+        "avatar": "TM"
+      },
+      "sophie": {
+        "quote": "Offline mode is essential on our sites where network coverage is often poor. Everything works perfectly without connection.",
+        "author": "Sophie Bernard",
+        "role": "OPC",
+        "company": "Groupe Batiment 77",
+        "avatar": "SB"
+      }
+    }
+  },
+  "cta": {
+    "badge": "Free and no sign-up",
+    "titleLine1": "Ready to simplify",
+    "titleLine2": "your daily work?",
+    "description": "Start using BrickNote now. Your data stays on your device, no account required.",
+    "button": "Launch the app",
+    "trustNote": "Coming soon to App Store · Works offline · 100% local data"
+  },
+  "footer": {
+    "description": "The iOS construction site management app. Notes, annotated photos, meetings and AI assistant.",
+    "product": "Product",
+    "resources": "Resources",
+    "links": {
+      "features": "Features",
+      "useCases": "Use Cases",
+      "launchApp": "Launch app",
+      "resources": "Resources",
+      "contact": "Contact",
+      "support": "Support"
+    },
+    "legal": {
+      "copyright": "2026 BrickNote. All rights reserved.",
+      "legalNotice": "Legal notice",
+      "terms": "Terms",
+      "privacy": "Privacy"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "metaDescription": "Contact the BrickNote team. We respond to all your questions within 24 hours.",
+    "title": "Contact us",
+    "subtitle": "A question, suggestion or need help? Our team responds within 24 hours.",
+    "badge": "Support",
+    "form": {
+      "labels": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "company": "Company",
+        "role": "Your role",
+        "message": "Message"
+      },
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@company.com",
+        "company": "Your company name",
+        "selectRole": "Select your role",
+        "message": "How can we help you?"
+      },
+      "submit": "Send message",
+      "roles": {
+        "opc": "OPC",
+        "worksManager": "Site Supervisor",
+        "siteManager": "Site Manager",
+        "other": "Other"
+      }
+    },
+    "info": {
+      "responseTime": {
+        "title": "Response time",
+        "value": "Response within 24 business hours"
+      },
+      "support": {
+        "title": "Support",
+        "value": "Our team is available Monday to Friday, 9am-6pm."
+      },
+      "faq": {
+        "title": "Frequently asked questions",
+        "items": {
+          "free": {
+            "question": "Is BrickNote really free?",
+            "answer": "Yes, the app is completely free and works without sign-up."
+          },
+          "dataSecure": {
+            "question": "Is my data secure?",
+            "answer": "Your data stays on your device. No information is sent to our servers without your consent."
+          },
+          "offlineWork": {
+            "question": "Does the app work offline?",
+            "answer": "Yes, all main features are available without internet connection."
+          }
+        }
+      }
+    }
+  },
+  "useCases": {
+    "pageTitle": "Use Cases - BrickNote",
+    "metaDescription": "Discover how BrickNote adapts to each construction profession: OPC, Site Supervisor, Site Manager.",
+    "title": "BrickNote for every profession",
+    "subtitle": "Discover how the app adapts to your role and transforms your daily work on site.",
+    "badge": "For construction pros",
+    "dailyChallenges": "Daily challenges",
+    "keyFeatures": "Key features",
+    "seeLess": "See less",
+    "learnMore": "Learn more",
+    "typicalDay": "A typical day: {role}",
+    "concreteBenefits": "Concrete benefits",
+    "personas": {
+      "opc": {
+        "title": "OPC",
+        "description": "Scheduling, Management, Coordination. Manage the planning and coordination of all trades.",
+        "painPoints": [
+          "Juggling multiple sites simultaneously",
+          "Coordinating interventions from dozens of companies",
+          "Producing detailed reports after each meeting",
+          "Tracking actions and follow-ups in real time"
+        ],
+        "features": [
+          "Audio recording of meetings with AI transcription",
+          "Automatic generation of structured reports",
+          "Action tracking by company and by lot",
+          "Multi-project view with centralized dashboard"
+        ]
+      },
+      "conducteur": {
+        "title": "Site Supervisor",
+        "description": "Supervise site progress and ensure liaison between the office and the field.",
+        "painPoints": [
+          "Document field issues quickly",
+          "Communicate effectively with the design office",
+          "Manage unexpected events and delays",
+          "Compile weekly reports"
+        ],
+        "features": [
+          "Annotated photos to report defects",
+          "Voice notes on the go",
+          "Complete history by zone or lot",
+          "PDF export for sharing with stakeholders"
+        ]
+      },
+      "chef": {
+        "title": "Site Manager",
+        "description": "Coordinate teams on site and ensure compliance with deadlines and quality.",
+        "painPoints": [
+          "Transmit instructions to teams",
+          "Document daily progress",
+          "Report material needs",
+          "Monitor safety and compliance"
+        ],
+        "features": [
+          "Simple interface usable with gloves",
+          "Offline mode for areas without network",
+          "Quick photo capture with annotation",
+          "AI assistant for technical questions"
+        ]
+      }
+    },
+    "scenarios": {
+      "opc": {
+        "workflow": [
+          { "time": "08:00", "action": "Review planning and prepare for site meeting" },
+          { "time": "09:00", "action": "Weekly meeting - audio recording activated" },
+          { "time": "11:00", "action": "AI generates the report during the break" },
+          { "time": "14:00", "action": "Review and send report to companies" },
+          { "time": "16:00", "action": "Action tracking and automatic follow-ups" }
+        ],
+        "benefits": [
+          "Save 2 hours per meeting on report writing",
+          "Zero information loss thanks to recording",
+          "Complete traceability of decisions and commitments",
+          "Better inter-company coordination"
+        ],
+        "quote": {
+          "text": "Before BrickNote, I spent my evenings writing reports. Now it's done in 10 minutes.",
+          "author": "Marie D.",
+          "company": "OPC Office Ile-de-France"
+        }
+      },
+      "conducteur": {
+        "workflow": [
+          { "time": "07:30", "action": "Morning site tour with photos of critical areas" },
+          { "time": "10:00", "action": "Annotation of defects found on plans" },
+          { "time": "12:00", "action": "Sync with the office from site base" },
+          { "time": "15:00", "action": "Prepare weekly report assisted by AI" },
+          { "time": "17:00", "action": "Review history for tomorrow's meeting" }
+        ],
+        "benefits": [
+          "Field documentation 3x faster",
+          "Dated and geolocated photographic evidence",
+          "Professional reports generated automatically",
+          "Instant access to site history"
+        ],
+        "quote": {
+          "text": "Photo annotation has changed the way I work. No more lengthy explanatory emails.",
+          "author": "Thomas L.",
+          "company": "Bouygues Batiment"
+        }
+      },
+      "chef": {
+        "workflow": [
+          { "time": "06:30", "action": "Check today's tasks on the app" },
+          { "time": "08:00", "action": "Team briefing with shared annotated photos" },
+          { "time": "11:00", "action": "Voice note to report a material need" },
+          { "time": "14:00", "action": "Technical question to the AI assistant" },
+          { "time": "16:00", "action": "Progress photo for the site supervisor" }
+        ],
+        "benefits": [
+          "Intuitive interface usable in the field",
+          "Works even without internet connection",
+          "Instant communication with management",
+          "Immediate technical answers via AI"
+        ],
+        "quote": {
+          "text": "Finally an app that understands field constraints. I even use it with my gloves.",
+          "author": "Karim B.",
+          "company": "Vinci Construction"
+        }
+      }
+    }
+  },
+  "resources": {
+    "pageTitle": "Resources - BrickNote",
+    "metaDescription": "Guides, tips and news to optimize your construction site management. Practical articles for construction professionals.",
+    "title": "Resources",
+    "subtitle": "Practical guides, expert tips and industry news to optimize your construction site management.",
+    "badge": "Blog",
+    "backToResources": "Back to resources",
+    "articleNotFound": "Article not found - BrickNote",
+    "all": "All",
+    "noArticles": "No articles in this category at the moment.",
+    "read": "Read",
+    "categories": {
+      "guide": "Guide",
+      "conseil": "Tip",
+      "actualite": "News"
+    }
+  },
+  "legal": {
+    "legalNotice": {
+      "pageTitle": "Legal Notice",
+      "metaDescription": "Legal notice for the BrickNote website. Information about the publisher, host and intellectual property rights.",
+      "title": "Legal Notice",
+      "subtitle": "Legal information about the BrickNote website",
+      "badge": "Legal",
+      "sections": {
+        "editor": {
+          "title": "Website Publisher",
+          "intro": "The website www.bricknote.ai is published by:",
+          "companyName": "Company name:",
+          "legalForm": "Legal form:",
+          "siren": "SIREN:",
+          "headquarters": "Headquarters:",
+          "email": "Email:"
+        },
+        "director": {
+          "title": "Publication Director",
+          "content": "The publication director is the legal representative of APITHINGS."
+        },
+        "hosting": {
+          "title": "Hosting",
+          "intro": "The website is hosted by:"
+        },
+        "intellectualProperty": {
+          "title": "Intellectual Property",
+          "content1": "All content (texts, images, graphics, logo, icons, sounds, software) on the BrickNote website is the exclusive property of APITHINGS or its partners and is protected by French and international intellectual property laws.",
+          "content2": "Any reproduction, representation, modification, publication, adaptation of all or part of the website elements, by any means or process, is prohibited without prior written authorization from APITHINGS."
+        },
+        "personalData": {
+          "title": "Personal Data",
+          "content": "For any information regarding the collection and processing of your personal data, please consult our",
+          "linkText": "Privacy Policy"
+        },
+        "cookies": {
+          "title": "Cookies",
+          "content": "The BrickNote website uses only strictly necessary cookies for website operation. These cookies do not collect any personal data for advertising purposes."
+        },
+        "hyperlinks": {
+          "title": "Hyperlinks",
+          "content": "The website may contain links to other websites. APITHINGS has no control over these websites and disclaims any responsibility for their content."
+        },
+        "applicableLaw": {
+          "title": "Applicable Law",
+          "content": "These legal notices are governed by French law. In case of dispute, French courts shall have sole jurisdiction."
+        },
+        "contact": {
+          "title": "Contact",
+          "content": "For any questions regarding these legal notices, you can contact us via our",
+          "linkText": "contact form"
+        }
+      }
+    },
+    "terms": {
+      "pageTitle": "Terms of Service",
+      "metaDescription": "Terms of Service for the BrickNote app. Access conditions, service usage and responsibilities.",
+      "title": "Terms of Service",
+      "subtitle": "Terms governing the use of the BrickNote app",
+      "badge": "Legal"
+    },
+    "privacy": {
+      "pageTitle": "Privacy Policy",
+      "metaDescription": "BrickNote Privacy Policy. How we collect, use and protect your personal data.",
+      "title": "Privacy Policy",
+      "subtitle": "How we protect your data",
+      "badge": "GDPR"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Language",
+    "switchTo": "Switch to {locale}"
+  }
+}

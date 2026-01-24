@@ -11,10 +11,17 @@ export interface Article {
   content: string
 }
 
-export const categoryLabels: Record<ArticleCategory, string> = {
-  guide: "Guide",
-  conseil: "Conseil",
-  actualite: "Actualite",
+export const categoryLabels: Record<string, Record<ArticleCategory, string>> = {
+  fr: {
+    guide: "Guide",
+    conseil: "Conseil",
+    actualite: "Actualite",
+  },
+  en: {
+    guide: "Guide",
+    conseil: "Tip",
+    actualite: "News",
+  },
 }
 
 export const categoryColors: Record<ArticleCategory, string> = {
@@ -23,7 +30,7 @@ export const categoryColors: Record<ArticleCategory, string> = {
   actualite: "bg-purple-100 text-purple-700",
 }
 
-export const articles: Article[] = [
+const articlesFr: Article[] = [
   {
     slug: "optimiser-reunions-chantier",
     title: "Comment optimiser vos reunions de chantier",
@@ -172,12 +179,174 @@ L'avenir appartient aux professionnels qui sauront integrer ces technologies dan
   },
 ]
 
-export function getArticleBySlug(slug: string): Article | undefined {
+const articlesEn: Article[] = [
+  {
+    slug: "optimiser-reunions-chantier",
+    title: "How to Optimize Your Site Meetings",
+    excerpt: "Discover best practices for effective and productive construction site meetings. Save time and improve communication.",
+    category: "guide",
+    date: "2026-01-15",
+    readTime: 8,
+    thumbnail: "/images/blog/reunion.jpg",
+    content: `
+# How to Optimize Your Site Meetings
+
+Site meetings are essential for proper work coordination. However, they can quickly become time-consuming if not well organized.
+
+## Prepare Your Meeting in Advance
+
+An effective meeting starts with good preparation. Before each meeting:
+
+- Establish a precise agenda
+- Send it to participants 48 hours in advance
+- Gather necessary documents (plans, photos, previous minutes)
+- Identify critical points to address
+
+## Structure the Meeting
+
+During the meeting, follow a clear structure:
+
+1. **Quick round table** (5 min) - Overall progress update
+2. **Previous actions review** (10 min) - Follow-up verification
+3. **Technical points** (30 min) - Discussion of day's topics
+4. **Planning** (10 min) - Coordination of upcoming interventions
+5. **Miscellaneous** (5 min) - Open questions
+
+## Use the Right Tools
+
+Audio recording of your meetings with automatic transcription allows you to:
+
+- Never forget any exchanges
+- Produce meeting minutes in minutes
+- Easily find information
+
+## Ensure Follow-up
+
+After the meeting:
+
+- Send the minutes within 24 hours
+- Clearly assign actions with deadlines
+- Schedule automatic reminders
+
+With these practices, your site meetings will become a real productivity lever.
+    `,
+  },
+  {
+    slug: "photos-annotees-communication-chantier",
+    title: "Annotated Photos: The Secret Weapon of Site Communication",
+    excerpt: "Why annotated photos are revolutionizing documentation and communication on construction sites.",
+    category: "conseil",
+    date: "2026-01-10",
+    readTime: 5,
+    thumbnail: "/images/blog/photo-annotee.jpg",
+    content: `
+# Annotated Photos: The Secret Weapon of Site Communication
+
+A picture is worth a thousand words. On a construction site, an annotated photo is worth ten thousand.
+
+## The Problem with Text Descriptions
+
+How many times have you received an email describing a defect with vague terms like "crack in the technical area"? Without a photo, interpretation is subjective and error-prone.
+
+## The Advantages of Annotation
+
+Annotated photos allow you to:
+
+- **Precisely locate** the problem on the image
+- **Add measurements** and references
+- **Indicate severity** with color codes
+- **Date and geotag** automatically
+
+## Best Practices
+
+For effective annotations:
+
+1. Take the photo with enough distance for context
+2. Use arrows to point to important elements
+3. Add short and precise notes
+4. Number if multiple elements to report
+
+## Integration into Your Processes
+
+Annotated photos easily integrate into:
+
+- Visit reports
+- Non-conformance reports
+- Reception documentation
+- Exchanges with the design office
+
+Adopt annotated photos and transform your site communication.
+    `,
+  },
+  {
+    slug: "ia-construction-tendances-2026",
+    title: "AI in Construction: 2026 Trends",
+    excerpt: "How artificial intelligence is transforming the construction industry and what it means for site professionals.",
+    category: "actualite",
+    date: "2026-01-05",
+    readTime: 6,
+    thumbnail: "/images/blog/ia-construction.jpg",
+    content: `
+# AI in Construction: 2026 Trends
+
+Artificial intelligence is no longer a technology of the future. It's already present on construction sites and transforming our professions.
+
+## Automatic Transcription and Synthesis
+
+AI transcription tools now allow you to:
+
+- Convert meetings to text in real time
+- Automatically generate structured reports
+- Identify actions and responsible parties
+
+## Intelligent Technical Assistance
+
+Construction-specialized AI assistants can:
+
+- Answer technical questions about building standards
+- Suggest solutions based on similar cases
+- Help with document writing
+
+## Predictive Analysis
+
+AI analyzes historical data to:
+
+- Anticipate potential delays
+- Optimize schedules
+- Detect quality risks
+
+## What This Changes for You
+
+These technologies don't replace human expertise, they augment it. Professionals who adopt these tools gain efficiency and can focus on high-value tasks.
+
+## Accessibility as a Key Issue
+
+The democratization of AI requires tools that are easy to access, work offline, and don't require technical expertise to use.
+
+The future belongs to professionals who can integrate these technologies into their daily practice.
+    `,
+  },
+]
+
+// Legacy export for backwards compatibility
+export const articles = articlesFr
+
+export function getArticlesByLocale(locale: string): Article[] {
+  return locale === "en" ? articlesEn : articlesFr
+}
+
+export function getArticleBySlug(slug: string, locale: string = "fr"): Article | undefined {
+  const articles = getArticlesByLocale(locale)
   return articles.find((article) => article.slug === slug)
 }
 
-export function getRelatedArticles(currentSlug: string, limit = 2): Article[] {
+export function getRelatedArticles(currentSlug: string, locale: string = "fr", limit = 2): Article[] {
+  const articles = getArticlesByLocale(locale)
   return articles
     .filter((article) => article.slug !== currentSlug)
     .slice(0, limit)
+}
+
+export function getCategoryLabel(category: ArticleCategory, locale: string = "fr"): string {
+  return categoryLabels[locale]?.[category] ?? categoryLabels.fr[category]
 }

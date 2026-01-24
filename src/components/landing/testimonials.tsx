@@ -1,54 +1,38 @@
 "use client"
 
+import { useTranslations } from "next-intl"
 import { Quote } from "lucide-react"
 import { AnimateOnScroll } from "@/components/shared/animate-on-scroll"
 
-const testimonials = [
-  {
-    quote:
-      "BrickNote a revolutionne notre facon de documenter les reunions. Plus besoin de prendre des notes a la main, tout est enregistre et resume automatiquement.",
-    author: "Marie Dubois",
-    role: "Conductrice de travaux",
-    company: "BTP Lyon",
-    avatar: "MD",
-  },
-  {
-    quote:
-      "L'annotation de photos directement sur le terrain nous fait gagner un temps fou. Fini les echanges d'emails pour expliquer ou se trouve le probleme.",
-    author: "Thomas Martin",
-    role: "Chef de chantier",
-    company: "Constructions Martin",
-    avatar: "TM",
-  },
-  {
-    quote:
-      "Le mode hors ligne est essentiel sur nos chantiers ou le reseau est souvent mauvais. Tout fonctionne parfaitement sans connexion.",
-    author: "Sophie Bernard",
-    role: "OPC",
-    company: "Groupe Batiment 77",
-    avatar: "SB",
-  },
-]
+const testimonialKeys = ["marie", "thomas", "sophie"]
 
 export function Testimonials() {
+  const t = useTranslations("testimonials")
+
   return (
     <section id="temoignages" className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-            <span className="font-serif">Ils nous font</span>
+            <span className="font-serif">{t("titleLine1")}</span>
             <br />
-            <span className="font-serif text-gradient-primary">confiance</span>
+            <span className="font-serif text-gradient-primary">{t("titleLine2")}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Decouvrez ce que nos utilisateurs disent d&apos;BrickNote.
+            {t("subtitle")}
           </p>
         </AnimateOnScroll>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <AnimateOnScroll key={index} delay={index * 100} animation="fade-up">
-              <TestimonialCard {...testimonial} />
+          {testimonialKeys.map((key, index) => (
+            <AnimateOnScroll key={key} delay={index * 100} animation="fade-up">
+              <TestimonialCard
+                quote={t(`items.${key}.quote`)}
+                author={t(`items.${key}.author`)}
+                role={t(`items.${key}.role`)}
+                company={t(`items.${key}.company`)}
+                avatar={t(`items.${key}.avatar`)}
+              />
             </AnimateOnScroll>
           ))}
         </div>

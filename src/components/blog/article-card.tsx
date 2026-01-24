@@ -1,8 +1,11 @@
-import Link from "next/link"
+"use client"
+
+import { useLocale, useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Clock, ArrowRight, FileText, Camera, Cpu } from "lucide-react"
-import { Article, categoryLabels, categoryColors } from "@/content/articles"
+import { Article, getCategoryLabel, categoryColors } from "@/content/articles"
 
 const categoryIcons = {
   guide: FileText,
@@ -21,7 +24,10 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article }: ArticleCardProps) {
-  const formattedDate = new Date(article.date).toLocaleDateString("fr-FR", {
+  const locale = useLocale()
+  const t = useTranslations("resources")
+
+  const formattedDate = new Date(article.date).toLocaleDateString(locale === "en" ? "en-US" : "fr-FR", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -30,7 +36,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
   const Icon = categoryIcons[article.category]
 
   return (
-    <Link href={`/ressources/${article.slug}`}>
+    <Link href={{ pathname: "/resources/[slug]", params: { slug: article.slug } }}>
       <Card className="group h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
         {/* Thumbnail */}
         <div className={`aspect-video bg-gradient-to-br ${categoryGradients[article.category]} flex items-center justify-center relative overflow-hidden`}>
@@ -51,7 +57,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
               variant="secondary"
               className={categoryColors[article.category]}
             >
-              {categoryLabels[article.category]}
+              {getCategoryLabel(article.category, locale)}
             </Badge>
             <div className="flex items-center gap-1 text-xs text-muted-foreground">
               <Clock className="w-3 h-3" />
@@ -70,7 +76,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
           <div className="flex items-center justify-between pt-2">
             <time className="text-xs text-muted-foreground">{formattedDate}</time>
             <span className="text-sm text-primary font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-              Lire
+              {t("read")}
               <ArrowRight className="w-4 h-4" />
             </span>
           </div>

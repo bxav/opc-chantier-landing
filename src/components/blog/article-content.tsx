@@ -1,6 +1,9 @@
+"use client"
+
+import { useLocale, useTranslations } from "next-intl"
 import { Badge } from "@/components/ui/badge"
 import { Clock, Calendar } from "lucide-react"
-import { Article, categoryLabels, categoryColors } from "@/content/articles"
+import { Article, getCategoryLabel, categoryColors } from "@/content/articles"
 
 interface ArticleContentProps {
   article: Article
@@ -19,7 +22,10 @@ function parseInlineMarkdown(text: string) {
 }
 
 export function ArticleContent({ article }: ArticleContentProps) {
-  const formattedDate = new Date(article.date).toLocaleDateString("fr-FR", {
+  const locale = useLocale()
+  const t = useTranslations("common")
+
+  const formattedDate = new Date(article.date).toLocaleDateString(locale === "en" ? "en-US" : "fr-FR", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -33,7 +39,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
           variant="secondary"
           className={categoryColors[article.category]}
         >
-          {categoryLabels[article.category]}
+          {getCategoryLabel(article.category, locale)}
         </Badge>
         <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <Calendar className="w-4 h-4" />
@@ -41,7 +47,7 @@ export function ArticleContent({ article }: ArticleContentProps) {
         </div>
         <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <Clock className="w-4 h-4" />
-          {article.readTime} min de lecture
+          {t("readTime", { minutes: article.readTime })}
         </div>
       </div>
 

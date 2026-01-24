@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -26,6 +27,7 @@ export function PersonaCard({
   scrollToId,
 }: PersonaCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const t = useTranslations("useCases")
 
   const handleCardClick = () => {
     if (scrollToId) {
@@ -58,7 +60,7 @@ export function PersonaCard({
         <div className="space-y-3">
           <div>
             <Badge variant="outline" className="mb-2 text-xs">
-              Defis quotidiens
+              {t("dailyChallenges")}
             </Badge>
             <ul className="space-y-1">
               {painPoints.slice(0, isExpanded ? undefined : 2).map((point, i) => (
@@ -73,7 +75,7 @@ export function PersonaCard({
           {isExpanded && (
             <div className="animate-fade-up">
               <Badge variant="outline" className="mb-2 text-xs">
-                Fonctionnalites cles
+                {t("keyFeatures")}
               </Badge>
               <ul className="space-y-1">
                 {features.map((feature, i) => (
@@ -98,11 +100,11 @@ export function PersonaCard({
         >
           {isExpanded ? (
             <>
-              Voir moins <ChevronUp className="w-4 h-4 ml-1" />
+              {t("seeLess")} <ChevronUp className="w-4 h-4 ml-1" />
             </>
           ) : (
             <>
-              En savoir plus <ChevronDown className="w-4 h-4 ml-1" />
+              {t("learnMore")} <ChevronDown className="w-4 h-4 ml-1" />
             </>
           )}
         </Button>

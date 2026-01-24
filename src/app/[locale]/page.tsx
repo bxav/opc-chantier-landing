@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server"
 import {
   Navbar,
   Hero,
@@ -10,7 +11,14 @@ import {
 import { OrganizationSchema, SoftwareApplicationSchema } from "@/components/seo"
 import { StickyMobileCTA } from "@/components/shared/sticky-mobile-cta"
 
-export default function Home() {
+interface HomePageProps {
+  params: Promise<{ locale: string }>
+}
+
+export default async function Home({ params }: HomePageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
+
   return (
     <>
       <OrganizationSchema />

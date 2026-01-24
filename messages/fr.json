@@ -1,0 +1,449 @@
+{
+  "metadata": {
+    "title": "BrickNote - L'app iOS de pilotage de chantier",
+    "titleTemplate": "{title} | BrickNote",
+    "description": "Pilotez vos chantiers BTP avec simplicite. Notes vocales, photos annotees, comptes-rendus IA et mode hors ligne. Bientot sur l'App Store.",
+    "keywords": "chantier, BTP, OPC, gestion, construction, reunion, assistant IA, hors ligne, iOS, iPhone",
+    "ogTitle": "BrickNote - L'app iOS de pilotage de chantier",
+    "ogDescription": "Pilotez vos chantiers BTP avec simplicite. Notes vocales, photos annotees, comptes-rendus IA et mode hors ligne.",
+    "twitterTitle": "BrickNote - Pilotage de chantier sur iOS",
+    "twitterDescription": "Notes vocales, photos annotees, assistant IA. Bientot sur l'App Store."
+  },
+  "common": {
+    "home": "Accueil",
+    "skipToContent": "Aller au contenu principal",
+    "backTo": "Retour aux {page}",
+    "relatedArticles": "Articles similaires",
+    "lastUpdated": "Derniere mise a jour : Janvier 2026",
+    "readTime": "{minutes} min de lecture"
+  },
+  "nav": {
+    "features": "Fonctionnalites",
+    "useCases": "Cas d'utilisation",
+    "resources": "Ressources",
+    "contact": "Contact",
+    "launchApp": "Lancer l'app",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "hero": {
+    "badge": "Bientot sur iOS",
+    "titleLine1": "Pilotez vos chantiers",
+    "titleLine2": "en toute simplicite",
+    "description": "Centralisez notes, photos et comptes-rendus de reunion. Annotez vos images et posez vos questions a l'assistant IA.",
+    "cta": "Commencer gratuitement",
+    "learnMore": "En savoir plus",
+    "trustBadge": {
+      "offline": "100% hors ligne",
+      "localData": "Donnees locales",
+      "noSignup": "Aucune inscription"
+    },
+    "mockup": {
+      "header": "Mon chantier",
+      "today": "Aujourd'hui",
+      "meetingTitle": "Reunion de chantier",
+      "meetingSubtitle": "3 actions identifiees",
+      "photosTitle": "Photos zone B",
+      "photosSubtitle": "5 photos annotees",
+      "noteTitle": "Note rapide",
+      "noteSubtitle": "Retard livraison beton",
+      "navJournal": "Journal",
+      "navAssistant": "Assistant",
+      "navAgenda": "Agenda"
+    }
+  },
+  "features": {
+    "titleLine1": "Tout ce qu'il vous faut,",
+    "titleLine2": "rien de superflu",
+    "subtitle": "Des outils penses pour le terrain, accessibles en quelques taps.",
+    "aiPowered": "Propulse par l'IA Claude",
+    "items": {
+      "aiAssistant": {
+        "title": "Assistant IA",
+        "description": "Posez vos questions sur le projet. L'assistant connait toutes vos notes et peut les resumer en un instant."
+      },
+      "meetingRecording": {
+        "title": "Enregistrement reunion",
+        "description": "Enregistrez vos reunions de chantier. Transcription et resume automatique par IA."
+      },
+      "annotatedPhotos": {
+        "title": "Photos annotees",
+        "description": "Prenez des photos et annotez-les directement. Cercles, fleches, texte - tout est possible."
+      },
+      "multiProject": {
+        "title": "Multi-projets",
+        "description": "Gerez plusieurs chantiers en parallele. Basculez d'un projet a l'autre en un tap."
+      },
+      "chronologicalJournal": {
+        "title": "Journal chronologique",
+        "description": "Retrouvez facilement vos notes par date. Historique complet de chaque chantier."
+      },
+      "offlineMode": {
+        "title": "Mode hors ligne",
+        "description": "Fonctionne sans connexion. Vos donnees se synchronisent des que le reseau revient."
+      }
+    }
+  },
+  "benefits": {
+    "titleLine1": "Concu pour",
+    "titleLine2": "le terrain",
+    "subtitle": "BrickNote est pense pour les professionnels du BTP qui ont besoin d'un outil simple, rapide et fiable.",
+    "stats": {
+      "activeUsers": "utilisateurs actifs",
+      "setupTime": "prise en main",
+      "offline": "hors ligne"
+    },
+    "items": {
+      "immediateMastery": {
+        "title": "Prise en main immediate",
+        "description": "Interface intuitive, aucune formation necessaire."
+      },
+      "localData": {
+        "title": "Donnees locales",
+        "description": "Vos informations restent sur votre appareil. Confidentialite garantie."
+      },
+      "voiceMode": {
+        "title": "Mode vocal",
+        "description": "Dictez vos notes et questions. L'app repond a voix haute."
+      },
+      "nativeIOS": {
+        "title": "Application native iOS",
+        "description": "Une vraie app iPhone, fluide et optimisee pour le terrain."
+      }
+    },
+    "floatingCards": {
+      "meetingReport": "CR reunion genere",
+      "actionsToFollow": "3 actions a suivre",
+      "photosThisMonth": "12 photos ce mois"
+    }
+  },
+  "testimonials": {
+    "titleLine1": "Ils nous font",
+    "titleLine2": "confiance",
+    "subtitle": "Decouvrez ce que nos utilisateurs disent de BrickNote.",
+    "items": {
+      "marie": {
+        "quote": "BrickNote a revolutionne notre facon de documenter les reunions. Plus besoin de prendre des notes a la main, tout est enregistre et resume automatiquement.",
+        "author": "Marie Dubois",
+        "role": "Conductrice de travaux",
+        "company": "BTP Lyon",
+        "avatar": "MD"
+      },
+      "thomas": {
+        "quote": "L'annotation de photos directement sur le terrain nous fait gagner un temps fou. Fini les echanges d'emails pour expliquer ou se trouve le probleme.",
+        "author": "Thomas Martin",
+        "role": "Chef de chantier",
+        "company": "Constructions Martin",
+        "avatar": "TM"
+      },
+      "sophie": {
+        "quote": "Le mode hors ligne est essentiel sur nos chantiers ou le reseau est souvent mauvais. Tout fonctionne parfaitement sans connexion.",
+        "author": "Sophie Bernard",
+        "role": "OPC",
+        "company": "Groupe Batiment 77",
+        "avatar": "SB"
+      }
+    }
+  },
+  "cta": {
+    "badge": "Gratuit et sans inscription",
+    "titleLine1": "Pret a simplifier",
+    "titleLine2": "votre quotidien ?",
+    "description": "Commencez a utiliser BrickNote des maintenant. Vos donnees restent sur votre appareil, aucun compte n'est requis.",
+    "button": "Lancer l'application",
+    "trustNote": "Bientot sur l'App Store · Fonctionne hors ligne · Donnees 100% locales"
+  },
+  "footer": {
+    "description": "L'application iOS de gestion de chantier. Notes, photos annotees, reunions et assistant IA.",
+    "product": "Produit",
+    "resources": "Ressources",
+    "links": {
+      "features": "Fonctionnalites",
+      "useCases": "Cas d'utilisation",
+      "launchApp": "Lancer l'app",
+      "resources": "Ressources",
+      "contact": "Contact",
+      "support": "Support"
+    },
+    "legal": {
+      "copyright": "2026 BrickNote. Tous droits reserves.",
+      "legalNotice": "Mentions legales",
+      "terms": "CGU",
+      "privacy": "Confidentialite"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "metaDescription": "Contactez l'equipe BrickNote. Nous repondons a toutes vos questions sous 24h.",
+    "title": "Contactez-nous",
+    "subtitle": "Une question, une suggestion ou besoin d'aide ? Notre equipe vous repond sous 24 heures.",
+    "badge": "Support",
+    "form": {
+      "labels": {
+        "firstName": "Prenom",
+        "lastName": "Nom",
+        "email": "Email",
+        "company": "Entreprise",
+        "role": "Votre role",
+        "message": "Message"
+      },
+      "placeholders": {
+        "firstName": "Jean",
+        "lastName": "Dupont",
+        "email": "jean.dupont@entreprise.fr",
+        "company": "Nom de votre entreprise",
+        "selectRole": "Selectionnez votre role",
+        "message": "Comment pouvons-nous vous aider ?"
+      },
+      "submit": "Envoyer le message",
+      "roles": {
+        "opc": "OPC",
+        "worksManager": "Conducteur de travaux",
+        "siteManager": "Chef de chantier",
+        "other": "Autre"
+      }
+    },
+    "info": {
+      "responseTime": {
+        "title": "Delai de reponse",
+        "value": "Reponse sous 24h ouvrees"
+      },
+      "support": {
+        "title": "Support",
+        "value": "Notre equipe est disponible du lundi au vendredi, 9h-18h."
+      },
+      "faq": {
+        "title": "Questions frequentes",
+        "items": {
+          "free": {
+            "question": "BrickNote est-il vraiment gratuit ?",
+            "answer": "Oui, l'application est entierement gratuite et fonctionne sans inscription."
+          },
+          "dataSecure": {
+            "question": "Mes donnees sont-elles securisees ?",
+            "answer": "Vos donnees restent sur votre appareil. Aucune information n'est envoyee a nos serveurs sans votre consentement."
+          },
+          "offlineWork": {
+            "question": "L'app fonctionne-t-elle hors ligne ?",
+            "answer": "Oui, toutes les fonctionnalites principales sont disponibles sans connexion internet."
+          }
+        }
+      }
+    }
+  },
+  "useCases": {
+    "pageTitle": "Cas d'utilisation - BrickNote",
+    "metaDescription": "Decouvrez comment BrickNote s'adapte a chaque metier du BTP : OPC, Conducteur de travaux, Chef de chantier.",
+    "title": "BrickNote pour chaque metier",
+    "subtitle": "Decouvrez comment l'application s'adapte a votre role et transforme votre quotidien sur le chantier.",
+    "badge": "Pour les pros du BTP",
+    "dailyChallenges": "Defis quotidiens",
+    "keyFeatures": "Fonctionnalites cles",
+    "seeLess": "Voir moins",
+    "learnMore": "En savoir plus",
+    "typicalDay": "Une journee type : {role}",
+    "concreteBenefits": "Benefices concrets",
+    "personas": {
+      "opc": {
+        "title": "OPC",
+        "description": "Ordonnancement, Pilotage, Coordination. Gerez la planification et la coordination de tous les corps de metier.",
+        "painPoints": [
+          "Jongler entre plusieurs chantiers simultanement",
+          "Coordonner les interventions de dizaines d'entreprises",
+          "Produire des comptes-rendus detailles apres chaque reunion",
+          "Suivre les actions et relances en temps reel"
+        ],
+        "features": [
+          "Enregistrement audio des reunions avec transcription IA",
+          "Generation automatique de comptes-rendus structures",
+          "Suivi des actions par entreprise et par lot",
+          "Vue multi-projets avec tableau de bord centralise"
+        ]
+      },
+      "conducteur": {
+        "title": "Conducteur de travaux",
+        "description": "Supervisez l'avancement du chantier et assurez la liaison entre le bureau et le terrain.",
+        "painPoints": [
+          "Documenter les problemes terrain rapidement",
+          "Communiquer efficacement avec le bureau d'etudes",
+          "Gerer les imprevis et retards",
+          "Compiler les rapports hebdomadaires"
+        ],
+        "features": [
+          "Photos annotees pour signaler les defauts",
+          "Notes vocales en deplacement",
+          "Historique complet par zone ou par lot",
+          "Export PDF pour partage avec les parties prenantes"
+        ]
+      },
+      "chef": {
+        "title": "Chef de chantier",
+        "description": "Coordonnez les equipes sur le terrain et assurez le respect des delais et de la qualite.",
+        "painPoints": [
+          "Transmettre les consignes aux equipes",
+          "Documenter l'avancement quotidien",
+          "Signaler les besoins en materiaux",
+          "Suivre la securite et la conformite"
+        ],
+        "features": [
+          "Interface simple utilisable avec des gants",
+          "Mode hors ligne pour les zones sans reseau",
+          "Capture photo rapide avec annotation",
+          "Assistant IA pour questions techniques"
+        ]
+      }
+    },
+    "scenarios": {
+      "opc": {
+        "workflow": [
+          { "time": "08:00", "action": "Revue du planning et preparation de la reunion de chantier" },
+          { "time": "09:00", "action": "Reunion hebdomadaire - enregistrement audio active" },
+          { "time": "11:00", "action": "L'IA genere le compte-rendu pendant la pause" },
+          { "time": "14:00", "action": "Verification et envoi du CR aux entreprises" },
+          { "time": "16:00", "action": "Suivi des actions et relances automatiques" }
+        ],
+        "benefits": [
+          "Gain de 2h par reunion sur la redaction des comptes-rendus",
+          "Zero perte d'information grace a l'enregistrement",
+          "Tracabilite complete des decisions et engagements",
+          "Meilleure coordination inter-entreprises"
+        ],
+        "quote": {
+          "text": "Avant BrickNote, je passais mes soirees a rediger les CR. Maintenant, c'est fait en 10 minutes.",
+          "author": "Marie D.",
+          "company": "Bureau OPC Ile-de-France"
+        }
+      },
+      "conducteur": {
+        "workflow": [
+          { "time": "07:30", "action": "Tour de chantier matinal avec photos des zones critiques" },
+          { "time": "10:00", "action": "Annotation des defauts constates sur plans" },
+          { "time": "12:00", "action": "Synchronisation avec le bureau depuis la base vie" },
+          { "time": "15:00", "action": "Preparation du rapport hebdomadaire assiste par IA" },
+          { "time": "17:00", "action": "Consultation de l'historique pour la reunion du lendemain" }
+        ],
+        "benefits": [
+          "Documentation terrain 3x plus rapide",
+          "Preuves photographiques datees et geolocalisees",
+          "Rapports professionnels generes automatiquement",
+          "Acces instantane a l'historique du chantier"
+        ],
+        "quote": {
+          "text": "L'annotation sur photo a change ma facon de travailler. Plus besoin de longs emails explicatifs.",
+          "author": "Thomas L.",
+          "company": "Bouygues Batiment"
+        }
+      },
+      "chef": {
+        "workflow": [
+          { "time": "06:30", "action": "Verification des taches du jour sur l'app" },
+          { "time": "08:00", "action": "Brief equipe avec partage des photos annotees" },
+          { "time": "11:00", "action": "Note vocale pour signaler un besoin materiel" },
+          { "time": "14:00", "action": "Question technique a l'assistant IA" },
+          { "time": "16:00", "action": "Photo d'avancement pour le conducteur de travaux" }
+        ],
+        "benefits": [
+          "Interface intuitive utilisable sur le terrain",
+          "Fonctionne meme sans connexion internet",
+          "Communication instantanee avec la hierarchie",
+          "Reponses techniques immediates via l'IA"
+        ],
+        "quote": {
+          "text": "Enfin une app qui comprend les contraintes du terrain. Je l'utilise meme avec mes gants.",
+          "author": "Karim B.",
+          "company": "Vinci Construction"
+        }
+      }
+    }
+  },
+  "resources": {
+    "pageTitle": "Ressources - BrickNote",
+    "metaDescription": "Guides, conseils et actualites pour optimiser la gestion de vos chantiers. Articles pratiques pour les professionnels du BTP.",
+    "title": "Ressources",
+    "subtitle": "Guides pratiques, conseils d'experts et actualites du secteur pour optimiser la gestion de vos chantiers.",
+    "badge": "Blog",
+    "backToResources": "Retour aux ressources",
+    "articleNotFound": "Article non trouve - BrickNote",
+    "all": "Tous",
+    "noArticles": "Aucun article dans cette categorie pour le moment.",
+    "read": "Lire",
+    "categories": {
+      "guide": "Guide",
+      "conseil": "Conseil",
+      "actualite": "Actualite"
+    }
+  },
+  "legal": {
+    "legalNotice": {
+      "pageTitle": "Mentions legales",
+      "metaDescription": "Mentions legales du site BrickNote. Informations sur l'editeur, l'hebergeur et les droits de propriete intellectuelle.",
+      "title": "Mentions legales",
+      "subtitle": "Informations legales concernant le site BrickNote",
+      "badge": "Legal",
+      "sections": {
+        "editor": {
+          "title": "Editeur du site",
+          "intro": "Le site www.bricknote.ai est edite par :",
+          "companyName": "Raison sociale :",
+          "legalForm": "Forme juridique :",
+          "siren": "SIREN :",
+          "headquarters": "Siege social :",
+          "email": "Email :"
+        },
+        "director": {
+          "title": "Directeur de la publication",
+          "content": "Le directeur de la publication est le representant legal de la societe APITHINGS."
+        },
+        "hosting": {
+          "title": "Hebergement",
+          "intro": "Le site est heberge par :"
+        },
+        "intellectualProperty": {
+          "title": "Propriete intellectuelle",
+          "content1": "L'ensemble des contenus (textes, images, graphismes, logo, icones, sons, logiciels) du site BrickNote est la propriete exclusive de APITHINGS ou de ses partenaires et est protege par les lois francaises et internationales relatives a la propriete intellectuelle.",
+          "content2": "Toute reproduction, representation, modification, publication, adaptation de tout ou partie des elements du site, quel que soit le moyen ou le procede utilise, est interdite, sauf autorisation ecrite prealable de APITHINGS."
+        },
+        "personalData": {
+          "title": "Donnees personnelles",
+          "content": "Pour toute information concernant la collecte et le traitement de vos donnees personnelles, veuillez consulter notre",
+          "linkText": "Politique de confidentialite"
+        },
+        "cookies": {
+          "title": "Cookies",
+          "content": "Le site BrickNote utilise des cookies strictement necessaires au fonctionnement du site. Ces cookies ne collectent aucune donnee personnelle a des fins publicitaires."
+        },
+        "hyperlinks": {
+          "title": "Liens hypertextes",
+          "content": "Le site peut contenir des liens vers d'autres sites. APITHINGS n'exerce aucun controle sur ces sites et decline toute responsabilite quant a leur contenu."
+        },
+        "applicableLaw": {
+          "title": "Droit applicable",
+          "content": "Les presentes mentions legales sont regies par le droit francais. En cas de litige, les tribunaux francais seront seuls competents."
+        },
+        "contact": {
+          "title": "Contact",
+          "content": "Pour toute question concernant ces mentions legales, vous pouvez nous contacter via notre",
+          "linkText": "formulaire de contact"
+        }
+      }
+    },
+    "terms": {
+      "pageTitle": "Conditions Generales d'Utilisation",
+      "metaDescription": "CGU de l'application BrickNote. Conditions d'acces, utilisation du service et responsabilites.",
+      "title": "Conditions Generales d'Utilisation",
+      "subtitle": "Conditions regissant l'utilisation de l'application BrickNote",
+      "badge": "Legal"
+    },
+    "privacy": {
+      "pageTitle": "Politique de confidentialite",
+      "metaDescription": "Politique de confidentialite de BrickNote. Comment nous collectons, utilisons et protegeons vos donnees personnelles.",
+      "title": "Politique de confidentialite",
+      "subtitle": "Comment nous protegeons vos donnees",
+      "badge": "RGPD"
+    }
+  },
+  "localeSwitcher": {
+    "label": "Langue",
+    "switchTo": "Changer en {locale}"
+  }
+}

@@ -1,10 +1,14 @@
 "use client"
 
-import Link from "next/link"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/routing"
+import NextLink from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Wifi, WifiOff, Shield, Sparkles } from "lucide-react"
 
 export function Hero() {
+  const t = useTranslations("hero")
+
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background orbs */}
@@ -36,36 +40,36 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/50 border border-primary/20 opacity-0 animate-fade-up">
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Bientot sur iOS</span>
+              <span className="text-sm font-medium text-primary">{t("badge")}</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight opacity-0 animate-fade-up delay-100">
-              <span className="font-serif font-semibold">Pilotez vos chantiers</span>
+              <span className="font-serif font-semibold">{t("titleLine1")}</span>
               <br />
-              <span className="text-gradient-primary font-serif font-bold">en toute simplicite</span>
+              <span className="text-gradient-primary font-serif font-bold">{t("titleLine2")}</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-lg opacity-0 animate-fade-up delay-200">
-              Centralisez notes, photos et comptes-rendus de reunion. Annotez vos images et posez vos questions a l&apos;assistant IA.
+              {t("description")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up delay-300">
               <Button size="lg" asChild className="rounded-full px-8 shadow-lg hover:shadow-primary/25 active:scale-[0.98] transition-all duration-300 animate-glow-pulse-subtle min-h-[48px]">
                 <Link href="/contact" className="gap-2">
-                  Commencer gratuitement
+                  {t("cta")}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild className="rounded-full px-8 hover:bg-secondary active:scale-[0.98] transition-all duration-300 min-h-[48px]">
-                <Link href="#fonctionnalites">En savoir plus</Link>
+                <NextLink href="#features">{t("learnMore")}</NextLink>
               </Button>
             </div>
 
             {/* Trust badges */}
             <div className="flex flex-wrap items-center gap-2 sm:gap-4 pt-4 opacity-0 animate-fade-up delay-400">
-              <TrustBadge icon={WifiOff} text="100% hors ligne" />
-              <TrustBadge icon={Shield} text="Donnees locales" />
-              <TrustBadge icon={Wifi} text="Aucune inscription" />
+              <TrustBadge icon={WifiOff} text={t("trustBadge.offline")} />
+              <TrustBadge icon={Shield} text={t("trustBadge.localData")} />
+              <TrustBadge icon={Wifi} text={t("trustBadge.noSignup")} />
             </div>
           </div>
 
@@ -80,45 +84,45 @@ export function Hero() {
                   {/* Header */}
                   <div className="bg-primary px-4 pt-10 pb-4">
                     <p className="text-primary-foreground font-semibold text-sm">
-                      Mon chantier
+                      {t("mockup.header")}
                     </p>
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 p-4 space-y-3">
                     <p className="text-xs text-muted-foreground font-medium">
-                      Aujourd&apos;hui
+                      {t("mockup.today")}
                     </p>
 
                     <MockupCard
                       color="bg-blue-100"
                       iconColor="bg-blue-500"
-                      title="Reunion de chantier"
-                      subtitle="3 actions identifiees"
+                      title={t("mockup.meetingTitle")}
+                      subtitle={t("mockup.meetingSubtitle")}
                       delay={0}
                     />
                     <MockupCard
                       color="bg-green-100"
                       iconColor="bg-green-500"
-                      title="Photos zone B"
-                      subtitle="5 photos annotees"
+                      title={t("mockup.photosTitle")}
+                      subtitle={t("mockup.photosSubtitle")}
                       delay={100}
                     />
                     <MockupCard
                       color="bg-amber-100"
                       iconColor="bg-amber-500"
-                      title="Note rapide"
-                      subtitle="Retard livraison beton"
+                      title={t("mockup.noteTitle")}
+                      subtitle={t("mockup.noteSubtitle")}
                       delay={200}
                     />
                   </div>
 
                   {/* Bottom Nav */}
                   <div className="flex justify-around py-3 border-t bg-background">
-                    <NavItem label="Journal" active />
+                    <NavItem label={t("mockup.navJournal")} active />
                     <NavItem label="+" />
-                    <NavItem label="Assistant" />
-                    <NavItem label="Agenda" />
+                    <NavItem label={t("mockup.navAssistant")} />
+                    <NavItem label={t("mockup.navAgenda")} />
                   </div>
                 </div>
               </div>

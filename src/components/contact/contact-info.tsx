@@ -1,22 +1,14 @@
+"use client"
+
+import { useTranslations } from "next-intl"
 import { Card, CardContent } from "@/components/ui/card"
 import { Mail, Clock, MessageCircle, HelpCircle } from "lucide-react"
 
-const faqs = [
-  {
-    question: "BrickNote est-il vraiment gratuit ?",
-    answer: "Oui, l'application est entierement gratuite et fonctionne sans inscription.",
-  },
-  {
-    question: "Mes donnees sont-elles securisees ?",
-    answer: "Vos donnees restent sur votre appareil. Aucune information n'est envoyee a nos serveurs sans votre consentement.",
-  },
-  {
-    question: "L'app fonctionne-t-elle hors ligne ?",
-    answer: "Oui, toutes les fonctionnalites principales sont disponibles sans connexion internet.",
-  },
-]
+const faqKeys = ["free", "dataSecure", "offlineWork"]
 
 export function ContactInfo() {
+  const t = useTranslations("contact.info")
+
   return (
     <div className="space-y-6">
       {/* Contact details */}
@@ -42,8 +34,8 @@ export function ContactInfo() {
               <Clock className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-medium mb-1">Delai de reponse</h4>
-              <p className="text-muted-foreground">Reponse sous 24h ouvrées</p>
+              <h4 className="font-medium mb-1">{t("responseTime.title")}</h4>
+              <p className="text-muted-foreground">{t("responseTime.value")}</p>
             </div>
           </div>
 
@@ -52,9 +44,9 @@ export function ContactInfo() {
               <MessageCircle className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h4 className="font-medium mb-1">Support</h4>
+              <h4 className="font-medium mb-1">{t("support.title")}</h4>
               <p className="text-muted-foreground">
-                Notre equipe est disponible du lundi au vendredi, 9h-18h.
+                {t("support.value")}
               </p>
             </div>
           </div>
@@ -66,13 +58,13 @@ export function ContactInfo() {
         <CardContent className="p-6">
           <div className="flex items-center gap-2 mb-4">
             <HelpCircle className="w-5 h-5 text-primary" />
-            <h3 className="font-semibold">Questions frequentes</h3>
+            <h3 className="font-semibold">{t("faq.title")}</h3>
           </div>
           <div className="space-y-4">
-            {faqs.map((faq, i) => (
+            {faqKeys.map((key, i) => (
               <div key={i} className="pb-4 border-b border-border/50 last:border-0 last:pb-0">
-                <h4 className="font-medium mb-1 text-sm">{faq.question}</h4>
-                <p className="text-sm text-muted-foreground">{faq.answer}</p>
+                <h4 className="font-medium mb-1 text-sm">{t(`faq.items.${key}.question`)}</h4>
+                <p className="text-sm text-muted-foreground">{t(`faq.items.${key}.answer`)}</p>
               </div>
             ))}
           </div>
