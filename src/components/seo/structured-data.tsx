@@ -116,6 +116,47 @@ export function FAQSchema({ items }: { items: FAQItem[] }) {
   )
 }
 
+interface WebApplicationSchemaProps {
+  name: string
+  description: string
+  url: string
+  category?: string
+}
+
+export function WebApplicationSchema({
+  name,
+  description,
+  url,
+  category = "Utility",
+}: WebApplicationSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: name,
+    description: description,
+    url: url,
+    applicationCategory: category,
+    operatingSystem: "All",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "EUR",
+    },
+    provider: {
+      "@type": "Organization",
+      name: "BrickNote",
+      url: "https://www.bricknote.ai",
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 interface ArticleSchemaProps {
   title: string
   description: string

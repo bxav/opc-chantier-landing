@@ -33,6 +33,30 @@ export const routing = defineRouting({
       en: "/privacy-policy",
       fr: "/politique-confidentialite",
     },
+    "/tools": {
+      en: "/tools",
+      fr: "/outils",
+    },
+    "/tools/concrete-calculator": {
+      en: "/tools/concrete-calculator",
+      fr: "/outils/calculateur-beton",
+    },
+    "/tools/paint-calculator": {
+      en: "/tools/paint-calculator",
+      fr: "/outils/calculateur-peinture",
+    },
+    "/tools/tile-calculator": {
+      en: "/tools/tile-calculator",
+      fr: "/outils/calculateur-carrelage",
+    },
+    "/tools/flooring-calculator": {
+      en: "/tools/flooring-calculator",
+      fr: "/outils/calculateur-parquet",
+    },
+    "/tools/unit-converter": {
+      en: "/tools/unit-converter",
+      fr: "/outils/convertisseur-unites",
+    },
   },
 })
 

@@ -22,6 +22,7 @@
     "useCases": "Use Cases",
     "resources": "Resources",
     "contact": "Contact",
+    "tools": "Tools",
     "launchApp": "Launch app",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
@@ -161,6 +162,7 @@
       "features": "Features",
       "useCases": "Use Cases",
       "launchApp": "Launch app",
+      "tools": "Free Tools",
       "resources": "Resources",
       "contact": "Contact",
       "support": "Support"
@@ -440,6 +442,104 @@
       "title": "Privacy Policy",
       "subtitle": "How we protect your data",
       "badge": "GDPR"
+    }
+  },
+  "tools": {
+    "pageTitle": "Free Construction Tools - BrickNote",
+    "metaDescription": "Free calculators for construction professionals: concrete, paint, tiles, flooring and unit converter.",
+    "title": "Free Tools",
+    "subtitle": "Calculators designed for construction professionals. Simple, accurate and 100% free.",
+    "badge": "Free tools",
+    "backToTools": "Back to tools",
+    "open": "Open",
+    "calculate": "Calculate",
+    "reset": "Reset",
+    "result": "Result",
+    "results": "Results",
+    "items": {
+      "concrete": {
+        "title": "Concrete Calculator",
+        "shortTitle": "Concrete",
+        "description": "Calculate concrete volume (m³) and number of bags needed",
+        "metaDescription": "Free concrete calculator: volume in m³ and bags needed for your slabs, foundations and pours.",
+        "length": "Length",
+        "width": "Width",
+        "thickness": "Thickness",
+        "volume": "Volume needed",
+        "bags25kg": "25kg bags",
+        "bags35kg": "35kg bags",
+        "note": "Add 10% for waste and spillage"
+      },
+      "paint": {
+        "title": "Paint Calculator",
+        "shortTitle": "Paint",
+        "description": "Calculate liters of paint needed for your walls",
+        "metaDescription": "Free paint calculator: liters needed for your walls based on surface area and number of coats.",
+        "wallHeight": "Wall height",
+        "wallLength": "Total wall length",
+        "coats": "Number of coats",
+        "coverage": "Coverage",
+        "openings": "Openings (doors/windows)",
+        "litersNeeded": "Paint needed",
+        "surfaceArea": "Surface to paint",
+        "note": "Standard coverage: 10-12 m²/L"
+      },
+      "tile": {
+        "title": "Tile Calculator",
+        "shortTitle": "Tiles",
+        "description": "Calculate number of tiles and packs needed",
+        "metaDescription": "Free tile calculator: number of tiles and packs needed for your floors and walls.",
+        "surfaceLength": "Room length",
+        "surfaceWidth": "Room width",
+        "tileLength": "Tile length",
+        "tileWidth": "Tile width",
+        "tilesPerPack": "Tiles per pack",
+        "waste": "Waste %",
+        "tilesNeeded": "Tiles needed",
+        "packsNeeded": "Packs needed",
+        "note": "Add 5-10% for cuts and breakage"
+      },
+      "flooring": {
+        "title": "Flooring Calculator",
+        "shortTitle": "Flooring",
+        "description": "Calculate m² and packs for parquet/laminate",
+        "metaDescription": "Free flooring calculator: surface area and packs needed for parquet and laminate installation.",
+        "roomLength": "Room length",
+        "roomWidth": "Room width",
+        "packCoverage": "m² per pack",
+        "waste": "Waste %",
+        "surfaceNeeded": "Surface needed",
+        "packsNeeded": "Packs needed",
+        "note": "Straight install: 5% waste, diagonal: 10-15%"
+      },
+      "converter": {
+        "title": "Unit Converter",
+        "shortTitle": "Converter",
+        "description": "Convert m²↔ft², m³↔L, kg↔lbs and more",
+        "metaDescription": "Free unit converter for construction: area, volume, weight, length conversions.",
+        "from": "From",
+        "to": "To",
+        "value": "Value",
+        "categories": {
+          "area": "Area",
+          "volume": "Volume",
+          "weight": "Weight",
+          "length": "Length"
+        },
+        "units": {
+          "m2": "m²",
+          "ft2": "ft²",
+          "m3": "m³",
+          "L": "Liters",
+          "gal": "Gallons",
+          "kg": "kg",
+          "lbs": "lbs",
+          "m": "Meters",
+          "ft": "Feet",
+          "cm": "cm",
+          "in": "Inches"
+        }
+      }
     }
   },
   "localeSwitcher": {

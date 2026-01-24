@@ -94,6 +94,14 @@ export function Footer() {
                   {t("links.launchApp")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools"
+                  className="text-sm text-white/70 hover:text-primary transition-colors"
+                >
+                  {t("links.tools")}
+                </Link>
+              </li>
             </ul>
           </div>
 

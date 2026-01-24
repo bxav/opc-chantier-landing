@@ -8,6 +8,12 @@ const pathnames: Record<string, Record<string, string>> = {
   "/use-cases": { en: "/use-cases", fr: "/cas-utilisation" },
   "/contact": { en: "/contact", fr: "/contact" },
   "/resources": { en: "/resources", fr: "/ressources" },
+  "/tools": { en: "/tools", fr: "/outils" },
+  "/tools/concrete-calculator": { en: "/tools/concrete-calculator", fr: "/outils/calculateur-beton" },
+  "/tools/paint-calculator": { en: "/tools/paint-calculator", fr: "/outils/calculateur-peinture" },
+  "/tools/tile-calculator": { en: "/tools/tile-calculator", fr: "/outils/calculateur-carrelage" },
+  "/tools/flooring-calculator": { en: "/tools/flooring-calculator", fr: "/outils/calculateur-parquet" },
+  "/tools/unit-converter": { en: "/tools/unit-converter", fr: "/outils/convertisseur-unites" },
   "/legal-notice": { en: "/legal-notice", fr: "/mentions-legales" },
   "/terms": { en: "/terms", fr: "/cgu" },
   "/privacy-policy": { en: "/privacy-policy", fr: "/politique-confidentialite" },
@@ -46,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url,
         lastModified: new Date(),
         changeFrequency: route === "/" ? "weekly" : "monthly",
-        priority: route === "/" ? 1 : route === "/contact" ? 0.7 : 0.8,
+        priority: route === "/" ? 1 : route === "/contact" ? 0.7 : route.startsWith("/tools") ? 0.75 : 0.8,
         alternates: getAlternates(route),
       })
     }

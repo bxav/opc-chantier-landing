@@ -22,6 +22,7 @@
     "useCases": "Cas d'utilisation",
     "resources": "Ressources",
     "contact": "Contact",
+    "tools": "Outils",
     "launchApp": "Lancer l'app",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu"
@@ -161,6 +162,7 @@
       "features": "Fonctionnalites",
       "useCases": "Cas d'utilisation",
       "launchApp": "Lancer l'app",
+      "tools": "Outils gratuits",
       "resources": "Ressources",
       "contact": "Contact",
       "support": "Support"
@@ -440,6 +442,104 @@
       "title": "Politique de confidentialite",
       "subtitle": "Comment nous protegeons vos donnees",
       "badge": "RGPD"
+    }
+  },
+  "tools": {
+    "pageTitle": "Outils gratuits BTP - BrickNote",
+    "metaDescription": "Calculateurs gratuits pour professionnels du batiment : beton, peinture, carrelage, parquet et convertisseur d'unites.",
+    "title": "Outils gratuits",
+    "subtitle": "Calculateurs concus pour les professionnels du BTP. Simples, precis et 100% gratuits.",
+    "badge": "Outils gratuits",
+    "backToTools": "Retour aux outils",
+    "open": "Ouvrir",
+    "calculate": "Calculer",
+    "reset": "Reinitialiser",
+    "result": "Resultat",
+    "results": "Resultats",
+    "items": {
+      "concrete": {
+        "title": "Calculateur beton",
+        "shortTitle": "Beton",
+        "description": "Calculez le volume de beton (m³) et le nombre de sacs necessaires",
+        "metaDescription": "Calculateur beton gratuit : volume en m³ et sacs necessaires pour vos dalles, fondations et coulages.",
+        "length": "Longueur",
+        "width": "Largeur",
+        "thickness": "Epaisseur",
+        "volume": "Volume necessaire",
+        "bags25kg": "Sacs de 25kg",
+        "bags35kg": "Sacs de 35kg",
+        "note": "Ajoutez 10% pour les pertes et le gaspillage"
+      },
+      "paint": {
+        "title": "Calculateur peinture",
+        "shortTitle": "Peinture",
+        "description": "Calculez les litres de peinture necessaires pour vos murs",
+        "metaDescription": "Calculateur peinture gratuit : litres necessaires pour vos murs selon la surface et le nombre de couches.",
+        "wallHeight": "Hauteur des murs",
+        "wallLength": "Longueur totale des murs",
+        "coats": "Nombre de couches",
+        "coverage": "Rendement",
+        "openings": "Ouvertures (portes/fenetres)",
+        "litersNeeded": "Peinture necessaire",
+        "surfaceArea": "Surface a peindre",
+        "note": "Rendement standard : 10-12 m²/L"
+      },
+      "tile": {
+        "title": "Calculateur carrelage",
+        "shortTitle": "Carrelage",
+        "description": "Calculez le nombre de carreaux et de boites necessaires",
+        "metaDescription": "Calculateur carrelage gratuit : nombre de carreaux et boites pour vos sols et murs.",
+        "surfaceLength": "Longueur de la piece",
+        "surfaceWidth": "Largeur de la piece",
+        "tileLength": "Longueur du carreau",
+        "tileWidth": "Largeur du carreau",
+        "tilesPerPack": "Carreaux par boite",
+        "waste": "% de perte",
+        "tilesNeeded": "Carreaux necessaires",
+        "packsNeeded": "Boites necessaires",
+        "note": "Ajoutez 5-10% pour les coupes et la casse"
+      },
+      "flooring": {
+        "title": "Calculateur parquet",
+        "shortTitle": "Parquet",
+        "description": "Calculez les m² et paquets pour parquet/stratifie",
+        "metaDescription": "Calculateur parquet gratuit : surface et paquets necessaires pour la pose de parquet et stratifie.",
+        "roomLength": "Longueur de la piece",
+        "roomWidth": "Largeur de la piece",
+        "packCoverage": "m² par paquet",
+        "waste": "% de perte",
+        "surfaceNeeded": "Surface necessaire",
+        "packsNeeded": "Paquets necessaires",
+        "note": "Pose droite : 5% perte, diagonale : 10-15%"
+      },
+      "converter": {
+        "title": "Convertisseur d'unites",
+        "shortTitle": "Convertisseur",
+        "description": "Convertissez m²↔ft², m³↔L, kg↔lbs et plus",
+        "metaDescription": "Convertisseur d'unites gratuit pour le BTP : surface, volume, poids, longueur.",
+        "from": "De",
+        "to": "Vers",
+        "value": "Valeur",
+        "categories": {
+          "area": "Surface",
+          "volume": "Volume",
+          "weight": "Poids",
+          "length": "Longueur"
+        },
+        "units": {
+          "m2": "m²",
+          "ft2": "ft²",
+          "m3": "m³",
+          "L": "Litres",
+          "gal": "Gallons",
+          "kg": "kg",
+          "lbs": "lbs",
+          "m": "Metres",
+          "ft": "Pieds",
+          "cm": "cm",
+          "in": "Pouces"
+        }
+      }
     }
   },
   "localeSwitcher": {

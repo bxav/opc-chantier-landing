@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { LocaleSwitcher } from "@/components/shared/locale-switcher"
 
-type StaticPathname = "/" | "/contact" | "/use-cases" | "/resources" | "/legal-notice" | "/terms" | "/privacy-policy"
+type StaticPathname = "/" | "/contact" | "/use-cases" | "/resources" | "/tools" | "/tools/concrete-calculator" | "/tools/paint-calculator" | "/tools/tile-calculator" | "/tools/flooring-calculator" | "/tools/unit-converter" | "/legal-notice" | "/terms" | "/privacy-policy"
 type NavLink = { href: StaticPathname; label: string; isHash?: false } | { href: string; label: string; isHash: true }
 
 interface NavbarProps {
@@ -24,6 +24,7 @@ export function Navbar({ alternateLocaleHref }: NavbarProps = {}) {
   const navLinks: NavLink[] = [
     { href: "/#features", label: t("features"), isHash: true },
     { href: "/use-cases", label: t("useCases") },
+    { href: "/tools", label: t("tools") },
     { href: "/resources", label: t("resources") },
     { href: "/contact", label: t("contact") },
   ]
