@@ -82,7 +82,7 @@ const mdxComponents = {
   pre: ({ children, ...props }: ComponentProps<"pre">) => (
     <pre
       {...props}
-      className="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto my-6"
+      className="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto my-6 [&>code]:bg-transparent [&>code]:p-0 [&>code]:text-inherit"
     >
       {children}
     </pre>

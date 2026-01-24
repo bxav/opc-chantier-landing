@@ -82,6 +82,13 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   const resourcesPath = locale === "en" ? "/resources" : "/ressources"
   const articleUrl = `${baseUrl}${localePath}${resourcesPath}/${post.slug}`
 
+  // Get the translated article URL for the language switcher
+  const otherLocale = locale === "en" ? "fr" : "en"
+  const translation = getTranslation(post.translationKey, otherLocale)
+  const alternateLocaleHref = translation
+    ? `/${otherLocale === "en" ? "" : otherLocale}${otherLocale === "en" ? "/resources" : "/ressources"}/${translation.slug}`.replace(/^\/\//, "/")
+    : undefined
+
   const breadcrumbSchemaItems = [
     { name: tCommon("home"), url: `${baseUrl}${localePath}` },
     { name: t("title"), url: `${baseUrl}${localePath}${resourcesPath}` },
@@ -102,11 +109,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       <BreadcrumbSchema items={breadcrumbSchemaItems} />
       <main className="min-h-screen">
         <div className="grain-overlay" />
-        <Navbar />
+        <Navbar alternateLocaleHref={alternateLocaleHref} />
 
         <Breadcrumb
           items={[
-            { label: resourcesLabel, href: "/resources" },
+            { label: resourcesLabel, href: "/resources" as const },
             { label: post.title },
           ]}
         />

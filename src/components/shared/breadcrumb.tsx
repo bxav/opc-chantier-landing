@@ -2,12 +2,13 @@
 
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
-import NextLink from "next/link"
 import { ChevronRight, Home } from "lucide-react"
+
+type StaticPathname = "/" | "/contact" | "/use-cases" | "/resources" | "/legal-notice" | "/terms" | "/privacy-policy"
 
 interface BreadcrumbItem {
   label: string
-  href?: string
+  href?: StaticPathname
 }
 
 interface BreadcrumbProps {
@@ -33,12 +34,12 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
           <li key={index} className="flex items-center gap-2 min-w-0">
             <ChevronRight className="w-4 h-4 text-muted-foreground/50 shrink-0" />
             {item.href ? (
-              <NextLink
+              <Link
                 href={item.href}
                 className="text-muted-foreground hover:text-foreground transition-colors truncate"
               >
                 {item.label}
-              </NextLink>
+              </Link>
             ) : (
               <span className="text-foreground font-medium truncate">{item.label}</span>
             )}

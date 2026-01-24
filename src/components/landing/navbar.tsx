@@ -11,7 +11,12 @@ import { LocaleSwitcher } from "@/components/shared/locale-switcher"
 type StaticPathname = "/" | "/contact" | "/use-cases" | "/resources" | "/legal-notice" | "/terms" | "/privacy-policy"
 type NavLink = { href: StaticPathname; label: string; isHash?: false } | { href: string; label: string; isHash: true }
 
-export function Navbar() {
+interface NavbarProps {
+  /** Override URL for the alternate locale (useful for translated content with different slugs) */
+  alternateLocaleHref?: string
+}
+
+export function Navbar({ alternateLocaleHref }: NavbarProps = {}) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const t = useTranslations("nav")
@@ -112,7 +117,7 @@ export function Navbar() {
                 )
               )}
               <div className="w-px h-6 bg-border mx-2" />
-              <LocaleSwitcher />
+              <LocaleSwitcher alternateLocaleHref={alternateLocaleHref} />
               <Button asChild className="rounded-full px-6 shadow-lg hover:shadow-primary/25 transition-all duration-300">
                 <Link href="/contact">{t("launchApp")}</Link>
               </Button>
@@ -120,7 +125,7 @@ export function Navbar() {
 
             {/* Mobile menu button */}
             <div className="md:hidden flex items-center gap-2">
-              <LocaleSwitcher />
+              <LocaleSwitcher alternateLocaleHref={alternateLocaleHref} />
               <button
                 className="p-3 -mr-1 rounded-xl hover:bg-secondary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
