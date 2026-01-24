@@ -16,13 +16,40 @@ Next.js 16 App Router landing page for BrickNote (BTP construction iOS app).
 
 **Structure:**
 - `src/app/` - Pages using App Router (page.tsx, layout.tsx)
-- `src/components/` - Component groups: `landing/`, `ui/`, `shared/`, `blog/`, `contact/`, `use-cases/`, `seo/`
-- `src/content/` - Static content (articles.ts)
+- `src/components/` - Component groups: `landing/`, `ui/`, `shared/`, `blog/`, `contact/`, `use-cases/`, `seo/`, `mdx/`
+- `src/lib/content.ts` - Velite content utilities
 - `src/lib/utils.ts` - Tailwind merge utility
+- `content/blog/{en,fr}/` - MDX blog articles
 
 **UI Stack:**
 - shadcn/ui (new-york style) with Radix primitives
 - Tailwind CSS v4 with CSS variables
 - lucide-react icons
 
-**Aliases:** `@/*` → `./src/*`
+**Aliases:**
+- `@/*` → `./src/*`
+- `#site/content` → `./.velite`
+
+## Content System (Velite + MDX)
+
+Blog articles use Velite for MDX processing with localized slugs.
+
+**Adding articles:**
+1. Create MDX file in `content/blog/{locale}/slug.mdx`
+2. Add frontmatter: title, description, date, category, readTime, translationKey
+3. Use same `translationKey` for EN/FR pairs to enable hreflang
+
+**Frontmatter schema:**
+```yaml
+title: "Article Title"
+description: "Short description"
+date: 2026-01-15
+category: guide | conseil | actualite
+readTime: 8
+translationKey: unique-key-for-translations
+```
+
+**Content utilities:** `src/lib/content.ts`
+- `getBlogPosts(locale)` - all posts for locale
+- `getBlogPost(slug, locale)` - single post
+- `getTranslation(translationKey, locale)` - get alternate language version
