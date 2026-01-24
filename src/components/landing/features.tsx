@@ -9,6 +9,7 @@ import {
   Wifi,
   Sparkles,
 } from "lucide-react"
+import { AnimateOnScroll } from "@/components/shared/animate-on-scroll"
 
 const features = [
   {
@@ -60,7 +61,7 @@ export function Features() {
   return (
     <section id="fonctionnalites" className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <AnimateOnScroll className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
             <span className="font-serif">Tout ce qu&apos;il vous faut,</span>
             <br />
@@ -69,16 +70,14 @@ export function Features() {
           <p className="text-lg text-muted-foreground">
             Des outils penses pour le terrain, accessibles en quelques taps.
           </p>
-        </div>
+        </AnimateOnScroll>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {features.map((feature, index) => (
-            <BentoCard
-              key={feature.title}
-              {...feature}
-              index={index}
-            />
+            <AnimateOnScroll key={feature.title} delay={index * 75} animation="scale-in">
+              <BentoCard {...feature} />
+            </AnimateOnScroll>
           ))}
         </div>
       </div>
@@ -92,14 +91,12 @@ function BentoCard({
   description,
   size,
   gradient,
-  index,
 }: {
   icon: React.ElementType
   title: string
   description: string
   size: "default" | "wide" | "lg"
   gradient?: boolean
-  index: number
 }) {
   const sizeClasses = {
     default: "",
@@ -110,7 +107,7 @@ function BentoCard({
   return (
     <div
       className={`
-        group relative overflow-hidden
+        group relative overflow-hidden h-full
         bg-card rounded-2xl p-6 lg:p-8
         border border-border/50
         shadow-depth hover:shadow-depth-lg
@@ -119,9 +116,6 @@ function BentoCard({
         ${sizeClasses[size]}
         ${gradient ? "bg-gradient-to-br from-primary/5 via-transparent to-gold/5" : ""}
       `}
-      style={{
-        animationDelay: `${index * 100}ms`,
-      }}
     >
       {/* Subtle glow on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">

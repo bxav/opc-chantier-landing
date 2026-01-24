@@ -1,6 +1,8 @@
 "use client"
 
 import { Check, FileText, Image, CheckCircle, Users, Clock, WifiOff } from "lucide-react"
+import { AnimateOnScroll, StaggerContainer } from "@/components/shared/animate-on-scroll"
+import { AnimatedCounter } from "@/components/shared/animated-counter"
 
 const benefits = [
   {
@@ -26,17 +28,20 @@ const benefits = [
 const stats = [
   {
     icon: Users,
-    value: "500+",
+    value: 500,
+    suffix: "+",
     label: "utilisateurs actifs",
   },
   {
     icon: Clock,
-    value: "2 min",
+    value: 2,
+    suffix: " min",
     label: "prise en main",
   },
   {
     icon: WifiOff,
-    value: "100%",
+    value: 100,
+    suffix: "%",
     label: "hors ligne",
   },
 ]
@@ -47,33 +52,39 @@ export function Benefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Stats Row */}
         <div className="grid grid-cols-3 gap-4 lg:gap-8 mb-20 max-w-3xl mx-auto">
-          {stats.map((stat) => (
-            <StatCard key={stat.label} {...stat} />
+          {stats.map((stat, index) => (
+            <AnimateOnScroll key={stat.label} delay={index * 100}>
+              <StatCard {...stat} />
+            </AnimateOnScroll>
           ))}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
-              <span className="font-serif">Concu pour</span>
-              <br />
-              <span className="font-serif text-gradient-primary">le terrain</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10 max-w-lg">
-              OptiChantier est pense pour les professionnels du BTP qui ont
-              besoin d&apos;un outil simple, rapide et fiable.
-            </p>
+            <AnimateOnScroll>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
+                <span className="font-serif">Concu pour</span>
+                <br />
+                <span className="font-serif text-gradient-primary">le terrain</span>
+              </h2>
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={100}>
+              <p className="text-lg text-muted-foreground mb-10 max-w-lg">
+                OptiChantier est pense pour les professionnels du BTP qui ont
+                besoin d&apos;un outil simple, rapide et fiable.
+              </p>
+            </AnimateOnScroll>
 
-            <div className="space-y-5">
-              {benefits.map((benefit, index) => (
-                <BenefitItem key={benefit.title} {...benefit} index={index} />
+            <StaggerContainer className="space-y-5" staggerDelay={100}>
+              {benefits.map((benefit) => (
+                <BenefitItem key={benefit.title} {...benefit} />
               ))}
-            </div>
+            </StaggerContainer>
           </div>
 
           {/* Floating Cards Visual */}
-          <div className="relative h-[400px] hidden lg:block">
+          <AnimateOnScroll animation="scale-in" className="relative h-[400px] hidden lg:block">
             {/* Background decorative elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-gold/5 rounded-3xl" />
 
@@ -95,7 +106,7 @@ export function Benefits() {
               className="absolute bottom-[15%] left-[20%] animate-float-slow"
               variant="info"
             />
-          </div>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>
@@ -105,16 +116,20 @@ export function Benefits() {
 function StatCard({
   icon: Icon,
   value,
+  suffix,
   label,
 }: {
   icon: React.ElementType
-  value: string
+  value: number
+  suffix: string
   label: string
 }) {
   return (
     <div className="text-center p-4 lg:p-6 rounded-2xl bg-card border border-border/50 shadow-depth hover:shadow-depth-lg transition-all duration-300 hover:-translate-y-1">
       <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-primary mx-auto mb-2" />
-      <div className="text-2xl lg:text-3xl font-bold text-gradient-primary">{value}</div>
+      <div className="text-2xl lg:text-3xl font-bold text-gradient-primary">
+        <AnimatedCounter end={value} suffix={suffix} duration={1500} />
+      </div>
       <div className="text-xs lg:text-sm text-muted-foreground">{label}</div>
     </div>
   )
@@ -123,17 +138,12 @@ function StatCard({
 function BenefitItem({
   title,
   description,
-  index,
 }: {
   title: string
   description: string
-  index: number
 }) {
   return (
-    <div
-      className="flex gap-4 group"
-      style={{ animationDelay: `${index * 100}ms` }}
-    >
+    <div className="flex gap-4 group">
       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
         <Check className="w-4 h-4 text-primary" />
       </div>

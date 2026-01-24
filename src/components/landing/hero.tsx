@@ -50,19 +50,19 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up delay-300">
-              <Button size="lg" asChild className="rounded-full px-8 shadow-lg hover:shadow-primary/25 transition-all duration-300 animate-glow-pulse-subtle">
+              <Button size="lg" asChild className="rounded-full px-8 shadow-lg hover:shadow-primary/25 active:scale-[0.98] transition-all duration-300 animate-glow-pulse-subtle min-h-[48px]">
                 <Link href="/contact" className="gap-2">
                   Commencer gratuitement
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild className="rounded-full px-8 hover:bg-secondary transition-all duration-300">
+              <Button size="lg" variant="outline" asChild className="rounded-full px-8 hover:bg-secondary active:scale-[0.98] transition-all duration-300 min-h-[48px]">
                 <Link href="#fonctionnalites">En savoir plus</Link>
               </Button>
             </div>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap items-center gap-4 pt-4 opacity-0 animate-fade-up delay-400">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 pt-4 opacity-0 animate-fade-up delay-400">
               <TrustBadge icon={WifiOff} text="100% hors ligne" />
               <TrustBadge icon={Shield} text="Donnees locales" />
               <TrustBadge icon={Wifi} text="Aucune inscription" />
@@ -132,9 +132,9 @@ export function Hero() {
 
 function TrustBadge({ icon: Icon, text }: { icon: React.ElementType; text: string }) {
   return (
-    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/80 border border-border">
-      <Icon className="w-3.5 h-3.5 text-primary" />
-      <span className="text-xs font-medium text-muted-foreground">{text}</span>
+    <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-secondary/80 border border-border min-h-[36px]">
+      <Icon className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+      <span className="text-xs font-medium text-muted-foreground whitespace-nowrap">{text}</span>
     </div>
   )
 }

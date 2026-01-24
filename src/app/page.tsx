@@ -8,13 +8,14 @@ import {
   Footer,
 } from "@/components/landing"
 import { OrganizationSchema, SoftwareApplicationSchema } from "@/components/seo"
+import { StickyMobileCTA } from "@/components/shared/sticky-mobile-cta"
 
 export default function Home() {
   return (
     <>
       <OrganizationSchema />
       <SoftwareApplicationSchema />
-      <main className="min-h-screen">
+      <main id="main-content" className="min-h-screen">
         {/* Grain texture overlay */}
         <div className="grain-overlay" />
 
@@ -25,6 +26,7 @@ export default function Home() {
         <Testimonials />
         <CTA />
         <Footer />
+        <StickyMobileCTA />
       </main>
     </>
   )
