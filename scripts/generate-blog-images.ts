@@ -105,6 +105,30 @@ Visual elements: Subtle holographic data visualizations, blue and orange accent 
 Style: Cinematic, tech-forward, professional.
 Quality: High resolution, modern aesthetic, clean composition.`,
   },
+  {
+    slug: "digital-safety-management",
+    filename: "digital-safety.png",
+    prompt: `Professional 2K 16:9 photograph of construction site with digital safety.
+
+Scene: Active construction site with proper safety barriers and signage.
+Focus: Supervisor in high-visibility orange vest and white safety helmet holds tablet showing safety checklist app with green checkmarks.
+Background: Workers wearing smart PPE (helmets, vests) working safely. Digital display board shows real-time safety metrics.
+Environment: Clean organized site with proper barriers, blue sky, golden hour lighting.
+Style: Documentary photography, photorealistic, professional.
+Quality: High resolution, 16:9 landscape format.`,
+  },
+  {
+    slug: "gestion-securite-numerique-chantier",
+    filename: "securite-numerique.png",
+    prompt: `Professional 2K 16:9 photograph of construction site with digital safety.
+
+Scene: Active construction site with proper safety barriers and signage.
+Focus: Supervisor in high-visibility orange vest and white safety helmet holds tablet showing safety checklist app with green checkmarks.
+Background: Workers wearing smart PPE (helmets, vests) working safely. Digital display board shows real-time safety metrics.
+Environment: Clean organized site with proper barriers, blue sky, golden hour lighting.
+Style: Documentary photography, photorealistic, professional.
+Quality: High resolution, 16:9 landscape format.`,
+  },
 ];
 
 const OUTPUT_DIR = path.join(process.cwd(), "public/images/blog");
@@ -174,6 +198,8 @@ async function generateImageSimple(config: ArticleConfig): Promise<boolean> {
     "photos-annotees.png": "Close-up of hands holding a smartphone showing a photo app with annotations. Professional photography style.",
     "ai-construction.png": "Modern office with multiple computer monitors showing data dashboards and analytics. Blue lighting, tech aesthetic.",
     "ia-construction.png": "Modern office with multiple computer monitors showing data dashboards and analytics. Blue lighting, tech aesthetic.",
+    "digital-safety.png": "Construction supervisor in orange vest holding tablet on clean organized construction site. Safety theme, professional photography.",
+    "securite-numerique.png": "Construction supervisor in orange vest holding tablet on clean organized construction site. Safety theme, professional photography.",
   };
 
   const simplePrompt = simplePrompts[config.filename] || "Professional business photography";
@@ -217,6 +243,8 @@ async function updateArticleFrontmatter(slug: string, imagePath: string): Promis
     "photos-annotees-communication-chantier": "content/blog/fr/photos-annotees-communication-chantier.mdx",
     "ai-construction-trends": "content/blog/en/ai-construction-trends.mdx",
     "ia-construction-tendances-2026": "content/blog/fr/ia-construction-tendances-2026.mdx",
+    "digital-safety-management": "content/blog/en/digital-safety-management.mdx",
+    "gestion-securite-numerique-chantier": "content/blog/fr/gestion-securite-numerique-chantier.mdx",
   };
 
   const relativePath = fileMap[slug];
@@ -280,6 +308,8 @@ async function main(): Promise<void> {
     "photos-annotees-communication-chantier": "/images/blog/photos-annotees.png",
     "ai-construction-trends": "/images/blog/ai-construction.png",
     "ia-construction-tendances-2026": "/images/blog/ia-construction.png",
+    "digital-safety-management": "/images/blog/digital-safety.png",
+    "gestion-securite-numerique-chantier": "/images/blog/securite-numerique.png",
   };
 
   for (const { slug, success } of results) {
