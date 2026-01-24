@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useLocale, useTranslations } from "next-intl"
 import { Link } from "@/i18n/routing"
 import { Card, CardContent } from "@/components/ui/card"
@@ -45,15 +46,27 @@ export function ArticleCard({ post }: ArticleCardProps) {
         <div
           className={`aspect-video bg-gradient-to-br ${categoryGradients[post.category]} flex items-center justify-center relative overflow-hidden`}
         >
-          {/* Decorative pattern */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-4 left-4 w-20 h-20 border-2 border-current rounded-full opacity-20" />
-            <div className="absolute bottom-4 right-4 w-32 h-32 border-2 border-current rounded-full opacity-10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-current rounded-full opacity-10" />
-          </div>
-          <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-            <Icon className="w-8 h-8 text-primary" />
-          </div>
+          {post.image ? (
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          ) : (
+            <>
+              {/* Decorative pattern fallback */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="absolute top-4 left-4 w-20 h-20 border-2 border-current rounded-full opacity-20" />
+                <div className="absolute bottom-4 right-4 w-32 h-32 border-2 border-current rounded-full opacity-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-current rounded-full opacity-10" />
+              </div>
+              <div className="w-16 h-16 rounded-2xl bg-white/80 backdrop-blur flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <Icon className="w-8 h-8 text-primary" />
+              </div>
+            </>
+          )}
         </div>
 
         <CardContent className="p-5 space-y-3">

@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useLocale, useTranslations } from "next-intl"
 import { Badge } from "@/components/ui/badge"
 import { Clock, Calendar } from "lucide-react"
@@ -25,6 +26,20 @@ export function ArticleContent({ post }: ArticleContentProps) {
 
   return (
     <article className="max-w-3xl mx-auto">
+      {/* Hero image */}
+      {post.image && (
+        <div className="relative aspect-video mb-8 rounded-xl overflow-hidden">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 768px) 100vw, 768px"
+          />
+        </div>
+      )}
+
       {/* Meta info */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
         <Badge
