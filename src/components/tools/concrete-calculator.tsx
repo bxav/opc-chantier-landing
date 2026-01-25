@@ -17,12 +17,19 @@ export function ConcreteCalculator() {
   const bags25kg = Math.ceil((volume * 2000) / 25)
   const bags35kg = Math.ceil((volume * 2000) / 35)
 
+  const copyText = `${t("title")}
+${t("volume")}: ${volume.toFixed(2)} m³
+${t("bags25kg")}: ${bags25kg}
+${t("bags35kg")}: ${bags35kg}`
+
   return (
     <CalculatorLayout
       title={t("title")}
       description={t("description")}
       icon={<Layers className="w-7 h-7 text-primary" />}
       note={t("note")}
+      copyText={copyText}
+      currentTool="/tools/concrete-calculator"
       results={
         <>
           <div className="bg-white rounded-xl p-4 border">

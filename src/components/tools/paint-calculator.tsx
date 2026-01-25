@@ -19,12 +19,18 @@ export function PaintCalculator() {
   const netSurface = Math.max(0, grossSurface - openings * 1.5)
   const liters = (netSurface * coats) / coverage
 
+  const copyText = `${t("title")}
+${t("litersNeeded")}: ${liters.toFixed(1)} L
+${t("surfaceArea")}: ${netSurface.toFixed(1)} m²`
+
   return (
     <CalculatorLayout
       title={t("title")}
       description={t("description")}
       icon={<Paintbrush className="w-7 h-7 text-primary" />}
       note={t("note")}
+      copyText={copyText}
+      currentTool="/tools/paint-calculator"
       results={
         <>
           <div className="bg-white rounded-xl p-4 border">

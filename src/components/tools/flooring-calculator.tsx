@@ -18,12 +18,18 @@ export function FlooringCalculator() {
   const surfaceWithWaste = surfaceArea * (1 + waste / 100)
   const packsNeeded = Math.ceil(surfaceWithWaste / packCoverage)
 
+  const copyText = `${t("title")}
+${t("surfaceNeeded")}: ${surfaceWithWaste.toFixed(1)} m²
+${t("packsNeeded")}: ${packsNeeded}`
+
   return (
     <CalculatorLayout
       title={t("title")}
       description={t("description")}
       icon={<LayoutGrid className="w-7 h-7 text-primary" />}
       note={t("note")}
+      copyText={copyText}
+      currentTool="/tools/flooring-calculator"
       results={
         <>
           <div className="bg-white rounded-xl p-4 border">

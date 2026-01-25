@@ -456,6 +456,14 @@
     "reset": "Reinitialiser",
     "result": "Resultat",
     "results": "Resultats",
+    "cta": {
+      "title": "Sauvegardez vos calculs",
+      "description": "Retrouvez tous vos calculs de projet dans BrickNote",
+      "button": "Obtenir l'app"
+    },
+    "copy": "Copier les resultats",
+    "copied": "Copie !",
+    "relatedTools": "Outils similaires",
     "items": {
       "concrete": {
         "title": "Calculateur beton",

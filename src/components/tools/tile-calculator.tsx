@@ -21,12 +21,18 @@ export function TileCalculator() {
   const tilesNeeded = Math.ceil((surfaceArea / tileArea) * (1 + waste / 100))
   const packsNeeded = Math.ceil(tilesNeeded / tilesPerPack)
 
+  const copyText = `${t("title")}
+${t("tilesNeeded")}: ${tilesNeeded}
+${t("packsNeeded")}: ${packsNeeded}`
+
   return (
     <CalculatorLayout
       title={t("title")}
       description={t("description")}
       icon={<Grid3X3 className="w-7 h-7 text-primary" />}
       note={t("note")}
+      copyText={copyText}
+      currentTool="/tools/tile-calculator"
       results={
         <>
           <div className="bg-white rounded-xl p-4 border">

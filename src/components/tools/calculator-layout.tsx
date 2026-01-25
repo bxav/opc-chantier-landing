@@ -4,6 +4,16 @@ import { Link } from "@/i18n/routing"
 import { useTranslations } from "next-intl"
 import { ArrowLeft } from "lucide-react"
 import type { ReactNode } from "react"
+import { CopyResultsButton } from "./copy-results-button"
+import { CalculatorCta } from "./calculator-cta"
+import { RelatedTools } from "./related-tools"
+
+type ToolPath =
+  | "/tools/concrete-calculator"
+  | "/tools/paint-calculator"
+  | "/tools/tile-calculator"
+  | "/tools/flooring-calculator"
+  | "/tools/unit-converter"
 
 interface CalculatorLayoutProps {
   title: string
@@ -12,6 +22,8 @@ interface CalculatorLayoutProps {
   children: ReactNode
   results: ReactNode
   note?: string
+  copyText?: string
+  currentTool: ToolPath
 }
 
 export function CalculatorLayout({
@@ -21,6 +33,8 @@ export function CalculatorLayout({
   children,
   results,
   note,
+  copyText,
+  currentTool,
 }: CalculatorLayoutProps) {
   const t = useTranslations("tools")
 
@@ -56,7 +70,10 @@ export function CalculatorLayout({
 
           {/* Results section */}
           <div className="bg-primary/5 rounded-2xl border border-primary/20 p-6">
-            <h2 className="font-semibold text-lg mb-4">{t("results")}</h2>
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="font-semibold text-lg">{t("results")}</h2>
+              {copyText && <CopyResultsButton copyText={copyText} />}
+            </div>
             <div className="space-y-4">{results}</div>
             {note && (
               <p className="mt-6 text-sm text-muted-foreground italic">
@@ -65,6 +82,12 @@ export function CalculatorLayout({
             )}
           </div>
         </div>
+
+        {/* CTA Banner */}
+        <CalculatorCta />
+
+        {/* Related Tools */}
+        <RelatedTools currentTool={currentTool} />
       </div>
     </div>
   )

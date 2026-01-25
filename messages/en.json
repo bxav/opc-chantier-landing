@@ -456,6 +456,14 @@
     "reset": "Reset",
     "result": "Result",
     "results": "Results",
+    "cta": {
+      "title": "Save your calculations",
+      "description": "Track all your project calculations in BrickNote",
+      "button": "Get the app"
+    },
+    "copy": "Copy results",
+    "copied": "Copied!",
+    "relatedTools": "Related tools",
     "items": {
       "concrete": {
         "title": "Concrete Calculator",

@@ -14,6 +14,9 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
+import { CalculatorCta } from "./calculator-cta"
+import { RelatedTools } from "./related-tools"
+import { CopyResultsButton } from "./copy-results-button"
 
 type Category = "area" | "volume" | "weight" | "length"
 
@@ -56,6 +59,10 @@ export function UnitConverter() {
   const [value, setValue] = useState(1)
 
   const result = value * (conversions[category][fromUnit]?.[toUnit] ?? 1)
+  const resultFormatted = result.toFixed(4).replace(/\.?0+$/, "")
+
+  const copyText = `${t("title")}
+${value} ${t(`units.${fromUnit}`)} = ${resultFormatted} ${t(`units.${toUnit}`)}`
 
   const handleCategoryChange = (newCategory: Category) => {
     setCategory(newCategory)
@@ -95,19 +102,22 @@ export function UnitConverter() {
 
         {/* Converter */}
         <div className="bg-card rounded-2xl border p-6 shadow-sm space-y-6">
-          {/* Category selector */}
-          <div className="flex flex-wrap gap-2">
-            {(Object.keys(conversions) as Category[]).map((cat) => (
-              <Button
-                key={cat}
-                variant={category === cat ? "default" : "outline"}
-                size="sm"
-                onClick={() => handleCategoryChange(cat)}
-                className="rounded-full"
-              >
-                {t(`categories.${cat}`)}
-              </Button>
-            ))}
+          {/* Header with copy button */}
+          <div className="flex items-center justify-between">
+            <div className="flex flex-wrap gap-2">
+              {(Object.keys(conversions) as Category[]).map((cat) => (
+                <Button
+                  key={cat}
+                  variant={category === cat ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => handleCategoryChange(cat)}
+                  className="rounded-full"
+                >
+                  {t(`categories.${cat}`)}
+                </Button>
+              ))}
+            </div>
+            <CopyResultsButton copyText={copyText} />
           </div>
 
           {/* Conversion inputs */}
@@ -150,7 +160,7 @@ export function UnitConverter() {
               <div className="flex gap-2">
                 <Input
                   type="text"
-                  value={result.toFixed(4).replace(/\.?0+$/, "")}
+                  value={resultFormatted}
                   readOnly
                   className="h-11 bg-primary/5 font-semibold"
                 />
@@ -170,6 +180,12 @@ export function UnitConverter() {
             </div>
           </div>
         </div>
+
+        {/* CTA Banner */}
+        <CalculatorCta />
+
+        {/* Related Tools */}
+        <RelatedTools currentTool="/tools/unit-converter" />
       </div>
     </div>
   )
